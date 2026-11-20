@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile Detailing Business OS – Gérez votre activité de detailing avec un seul tableur</title>
+<meta name="description" content="Calculateur de prix, CRM clients, agenda, suivi des recettes et dépenses, facture, modèles de messages et checklists pour les pros du detailing mobile. Excel et Google Sheets. Téléchargement immédiat.">
+<style>
+:root{--navy:#0f1e33;--accent:#1fa3c7;--accent2:#14839f;--bg:#ffffff;--soft:#f3f8fb;--text:#1b2633;--muted:#5a6b7d;--line:#dde6ee}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.55}
+a{color:var(--accent2)}.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);color:#fff}nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-weight:800;letter-spacing:.3px}.logo span{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0 64px}
+h1{font-size:clamp(28px,4.5vw,46px);line-height:1.12;margin:0 0 16px}.hero p{color:#c9d6e3;font-size:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:10px;border:0;cursor:pointer}
+.btn:hover{background:var(--accent2)}.btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.hero .note{font-size:14px;color:#9fb3c8;margin-top:12px}
+.mock{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
+section{padding:64px 0}section.soft{background:var(--soft)}h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}.lead{color:var(--muted);max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted)}
+.pain li{margin:8px 0}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.tier{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.tier.best{border:2px solid var(--accent);position:relative}.tier.best:before{content:"Best value";position:absolute;top:-12px;left:20px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px}
+.price{font-size:36px;font-weight:800;margin:6px 0}.tier ul{padding-left:18px;color:var(--muted);flex:1;font-size:15px}.tier .btn{text-align:center}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}summary{font-weight:700;cursor:pointer}
+footer{background:var(--navy);color:#9fb3c8;padding:28px 0;font-size:14px}footer a{color:#c9d6e3}
+@media (max-width:860px){.hero,.grid{grid-template-columns:1fr}.prices{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.prices{grid-template-columns:1fr}}
+.langs{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}.langs a{color:inherit;opacity:.7;text-decoration:none;padding:2px 6px;border-radius:6px}.langs a[aria-current]{opacity:1;font-weight:700;outline:1px solid currentColor}@media (max-width:600px){nav{flex-wrap:wrap;row-gap:10px}.langs{order:3;width:100%}}
+</style>
+<link rel="alternate" hreflang="en" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+<link rel="alternate" hreflang="es" href="https://xsvenn.github.io/loopwise-sites/detailos/es/">
+<link rel="alternate" hreflang="fr" href="https://xsvenn.github.io/loopwise-sites/detailos/fr/">
+<link rel="alternate" hreflang="pt" href="https://xsvenn.github.io/loopwise-sites/detailos/pt/">
+<link rel="alternate" hreflang="th" href="https://xsvenn.github.io/loopwise-sites/detailos/th/">
+<link rel="alternate" hreflang="ru" href="https://xsvenn.github.io/loopwise-sites/detailos/ru/">
+<link rel="alternate" hreflang="uk" href="https://xsvenn.github.io/loopwise-sites/detailos/uk/">
+<link rel="alternate" hreflang="ar" href="https://xsvenn.github.io/loopwise-sites/detailos/ar/">
+<link rel="alternate" hreflang="zh" href="https://xsvenn.github.io/loopwise-sites/detailos/zh/">
+<link rel="alternate" hreflang="hi" href="https://xsvenn.github.io/loopwise-sites/detailos/hi/">
+<link rel="alternate" hreflang="x-default" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav><div class="logo">Detail<span>OS</span></div><div class="langs"><a href="../" hreflang="en" lang="en">EN</a><a href="../es/" hreflang="es" lang="es">ES</a><a href="../fr/" hreflang="fr" lang="fr" aria-current="page">FR</a><a href="../pt/" hreflang="pt" lang="pt">PT</a><a href="../th/" hreflang="th" lang="th">ไทย</a><a href="../ru/" hreflang="ru" lang="ru">RU</a><a href="../uk/" hreflang="uk" lang="uk">UA</a><a href="../ar/" hreflang="ar" lang="ar">عربي</a><a href="../zh/" hreflang="zh" lang="zh">中文</a><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></div><a class="btn ghost" href="#pricing">Obtenir</a></nav>
+  <div class="hero">
+   <div>
+    <h1>Gérez votre activité de detailing mobile avec un seul tableur.</h1>
+    <p>Fixez un prix rentable pour chaque prestation, gardez chaque client et véhicule en fichier, remplissez votre agenda de clients fidèles et voyez votre vrai bénéfice chaque mois, sans payer de logiciel.</p>
+    <a class="btn" href="#pricing">Voir les formules</a>
+    <div class="note">Excel et Google Sheets · Téléchargement immédiat · Paiement unique, sans abonnement</div>
+   </div>
+   <img class="mock" src="../img/mockup-dashboard.svg" alt="Aperçu du tableau de bord Business OS avec recettes, dépenses et bénéfice mensuels">
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <h2>Ça vous parle ?</h2>
+  <ul class="pain lead">
+   <li>Vous êtes complet tous les week-ends, mais en fin de mois vous ne savez pas ce que vous avez vraiment gagné.</li>
+   <li>Les prix sont au feeling. Les gros SUV et les intérieurs pleins de poils de chien vous prennent du temps pour le même prix.</li>
+   <li>Vos clients sont éparpillés entre téléphone, messages Instagram et notes, et vous oubliez de les relancer.</li>
+   <li>Factures, devis et réponses vous prennent vos soirées.</li>
+  </ul>
+ </div>
+</section>
+
+<section class="soft">
+ <div class="wrap">
+  <h2>Tout ce dont un pro du detailing mobile a besoin</h2>
+  <p class="lead">Un classeur connecté : ce que vous saisissez une fois alimente les prix, les factures, l'historique client et votre tableau de bord.</p>
+  <div class="grid">
+   <div class="card"><h3>Calculateur de prix et de marge</h3><p>Saisissez heures, produits et déplacement. Obtenez un prix conseillé selon votre marge cible et votre bénéfice par heure.</p></div>
+   <div class="card"><h3>CRM clients</h3><p>Contact, provenance, consentement, visites, total dépensé et une date automatique « à relancer ».</p></div>
+   <div class="card"><h3>Fiches véhicules</h3><p>Marque, gabarit, état de la peinture, dates de traitement céramique et notes par véhicule.</p></div>
+   <div class="card"><h3>Agenda des rendez-vous</h3><p>Rendez-vous, acomptes, statut et rappels dans une seule liste.</p></div>
+   <div class="card"><h3>Recettes et dépenses</h3><p>Journal des prestations avec calcul de taxe, dépenses par catégorie, suivi des factures impayées.</p></div>
+   <div class="card"><h3>Tableau de bord mensuel</h3><p>Recettes, coûts, bénéfice, nombre de prestations, panier moyen et bénéfice par heure, avec graphique.</p></div>
+   <div class="card"><h3>Facture et grille tarifaire</h3><p>Facture prête à imprimer et grille tarifaire client créées à partir de vos propres chiffres.</p></div>
+   <div class="card"><h3>13 modèles de messages</h3><p>Réponses aux demandes, devis, rappels, demandes d'avis, parrainage, nouvelles réservations, réclamations.</p></div>
+   <div class="card"><h3>Guide, checklists, marketing</h3><p>Guide de démarrage, checklists d'intervention, modèle de conditions, 30 jours d'idées de contenu.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <img class="mock" style="max-width:720px;display:block;margin:0 auto" src="../img/mockup-bundle.svg" alt="Contenu du Complete Bundle : classeur, guide, modèles, checklists et pack marketing">
+ </div>
+</section>
+
+<section class="soft" id="pricing">
+ <div class="wrap">
+  <h2>Choisissez votre formule</h2>
+  <p class="lead">Paiement unique. Prix en USD ; des taxes locales peuvent s'ajouter au paiement.</p>
+  <p class="lead"><strong>Remarque : les fichiers sont en anglais.</strong></p>
+  <div class="prices">
+   <div class="tier"><h3>Starter</h3><div class="price">$9</div>
+    <ul><li>Calculateur de prix et de marge</li><li>Grille tarifaire client</li><li>Modèle de facture</li><li>Checklists d'intervention</li><li>Modèle de conditions de service</li></ul>
+    <a class="btn" href="#" data-tier="starter">Acheter Starter</a></div>
+   <div class="tier"><h3>Professional</h3><div class="price">$19</div>
+    <ul><li>Classeur Business OS complet (11 onglets)</li><li>CRM, véhicules, rendez-vous</li><li>Recettes, dépenses, tableau de bord</li><li>13 modèles de messages clients</li><li>Checklists et conditions</li></ul>
+    <a class="btn" href="#" data-tier="professional">Acheter Professional</a></div>
+   <div class="tier"><h3>Business</h3><div class="price">$29</div>
+    <ul><li>Tout Professional</li><li>Guide de démarrage : tarifs, équipement, 10 premiers clients, formules récurrentes</li></ul>
+    <a class="btn" href="#" data-tier="business">Acheter Business</a></div>
+   <div class="tier best"><h3>Complete Bundle</h3><div class="price">$39</div>
+    <ul><li>Tout ce qui précède</li><li>Pack marketing et réseaux sociaux</li><li>Checklist Fiche d'établissement Google</li><li>Modèles de flyers et de partenariats</li><li>Mises à jour futures gratuites</li></ul>
+    <a class="btn" href="#" data-tier="bundle">Acheter le Bundle</a></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>FAQ</h2>
+  <details><summary>De quoi ai-je besoin ?</summary><p>Microsoft Excel 2019 ou plus récent / Microsoft 365, ou un compte Google gratuit pour Google Sheets. Les documents Word s'ouvrent dans Word, Google Docs ou LibreOffice.</p></details>
+  <details><summary>Comment je reçois les fichiers ?</summary><p>Juste après le paiement, vous recevez un lien de téléchargement à l'écran et par e-mail.</p></details>
+  <details><summary>Est-ce un abonnement ?</summary><p>Non. Vous payez une fois et gardez les fichiers.</p></details>
+  <details><summary>Ça marche hors des États-Unis ?</summary><p>Oui. Vous définissez votre devise et votre taux de taxe/TVA. Les distances fonctionnent en km ou en miles.</p></details>
+  <details><summary>Puis-je le personnaliser ?</summary><p>Oui. Renommez les prestations, changez les prix, ajoutez votre logo. Les feuilles ne sont pas verrouillées.</p></details>
+  <details><summary>Est-ce un conseil fiscal ou juridique ?</summary><p>Non. Les outils vous aident à organiser vos chiffres. Vérifiez les obligations fiscales et légales de votre pays avec un professionnel.</p></details>
+  <details><summary>Et si j'ai un problème avec les fichiers ?</summary><p>Écrivez-nous sur <a href="https://wa.me/66650576517?text=Bonjour%2C%20j%27ai%20besoin%20d%27aide%20avec%20DetailOS." target="_blank" rel="noopener">WhatsApp</a> ou écrivez à hello.loopwise+detailos@outlook.com et nous vous aiderons. Si un fichier est défectueux et que nous ne pouvons pas le réparer, vous êtes remboursé.</p></details>
+ </div>
+</section>
+
+<section class="soft" id="support">
+ <div class="wrap">
+  <h2>Assistance</h2>
+  <p class="lead">Une question sur un achat, un téléchargement ou l'utilisation des fichiers ? Écrivez-nous dans votre langue. Réponse par e-mail, généralement en quelques heures.</p>
+  <form id="sf" style="display:grid;gap:12px;max-width:560px;margin-top:18px">
+   <input name="email" type="email" required placeholder="Votre e-mail (celui de la commande)" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <input name="subject" required placeholder="Objet" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <textarea name="message" rows="4" required placeholder="Comment pouvons-nous vous aider ?" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px"></textarea>
+   <button class="btn" type="submit">Envoyer</button>
+   <div id="sok" style="display:none;background:#e5f6fb;padding:12px;border-radius:10px"></div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  © <span id="y"></span> DetailOS · <a href="https://wa.me/66650576517" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:hello.loopwise+detailos@outlook.com">hello.loopwise+detailos@outlook.com</a> · <a href="../imprint.html">Mentions légales</a> · <a href="../privacy.html">Confidentialité</a> · <a href="../terms.html">Conditions et remboursements</a>
+ </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();
+// TODO: replace href="#" on [data-tier] buttons with Payhip product links once the store exists.</script>
+<script>
+const S_OK="Merci ! Nous avons reçu votre message et répondrons par e-mail.";
+const S_ERR="L'envoi a échoué. Écrivez à hello.loopwise+detailos@outlook.com.";
+document.getElementById('sf').addEventListener('submit',async e=>{
+ e.preventDefault();const b=e.target.querySelector('button'),o=document.getElementById('sok');b.disabled=true;
+ const d=Object.fromEntries(new FormData(e.target));d.site='shop';d.lang=document.documentElement.lang;
+ try{const r=await fetch('https://xsvenn.app.n8n.cloud/webhook/loopwise-support',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});if(!r.ok)throw 0;o.textContent=S_OK;e.target.reset();}
+ catch(err){b.disabled=false;o.textContent=S_ERR;}
+ o.style.display='block';
+});
+</script>
+</body>
+</html>

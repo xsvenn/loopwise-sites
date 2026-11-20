@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="Segoe UI,Arial,sans-serif">
+ <rect width="720" height="320" rx="20" fill="#0f1e33"/>
+ <text x="36" y="52" fill="#fff" font-size="24" font-weight="800">Complete Bundle</text>
+ <text x="36" y="78" fill="#9fb3c8" font-size="14">7 files · Excel, Google Sheets, Word</text>
+ <g font-size="12" font-weight="700" text-anchor="middle">
+  <g transform="translate(36,110)"><rect width="120" height="160" rx="10" fill="#1d6f42"/><rect x="14" y="20" width="92" height="70" rx="4" fill="#fff" opacity=".9"/><text x="60" y="118" fill="#fff">Business OS</text><text x="60" y="136" fill="#cfe9d9" font-size="10" font-weight="400">11 tabs .xlsx</text></g>
+  <g transform="translate(170,110)"><rect width="120" height="160" rx="10" fill="#1d6f42" opacity=".85"/><rect x="14" y="20" width="92" height="70" rx="4" fill="#fff" opacity=".9"/><text x="60" y="118" fill="#fff">Price Calculator</text><text x="60" y="136" fill="#cfe9d9" font-size="10" font-weight="400">.xlsx</text></g>
+  <g transform="translate(304,110)"><rect width="120" height="160" rx="10" fill="#2b579a"/><rect x="14" y="20" width="92" height="70" rx="4" fill="#fff" opacity=".9"/><text x="60" y="118" fill="#fff">Starter Guide</text><text x="60" y="136" fill="#d3def0" font-size="10" font-weight="400">.docx</text></g>
+  <g transform="translate(438,110)"><rect width="120" height="160" rx="10" fill="#2b579a" opacity=".85"/><rect x="14" y="20" width="92" height="70" rx="4" fill="#fff" opacity=".9"/><text x="60" y="118" fill="#fff">13 Scripts</text><text x="60" y="136" fill="#d3def0" font-size="10" font-weight="400">.docx</text></g>
+  <g transform="translate(572,110)"><rect width="112" height="160" rx="10" fill="#1fa3c7"/><rect x="14" y="20" width="84" height="70" rx="4" fill="#fff" opacity=".9"/><text x="56" y="118" fill="#fff">Marketing,</text><text x="56" y="136" fill="#fff">Checklists, Terms</text></g>
+ </g>
+</svg>

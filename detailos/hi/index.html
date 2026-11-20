@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>मोबाइल डिटेलिंग बिज़नेस OS – एक ही स्प्रेडशीट से अपना डिटेलिंग बिज़नेस चलाएँ</title>
+<meta name="description" content="मोबाइल कार डिटेलर्स के लिए प्राइस कैलकुलेटर, कस्टमर CRM, बुकिंग कैलेंडर, आय व व्यय ट्रैकर, इनवॉइस, स्क्रिप्ट्स और चेकलिस्ट। Excel & Google Sheets पर। तुरंत डाउनलोड करें।">
+<style>
+:root{--navy:#0f1e33;--accent:#1fa3c7;--accent2:#14839f;--bg:#ffffff;--soft:#f3f8fb;--text:#1b2633;--muted:#5a6b7d;--line:#dde6ee}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.55}
+a{color:var(--accent2)}.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);color:#fff}nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-weight:800;letter-spacing:.3px}.logo span{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0 64px}
+h1{font-size:clamp(28px,4.5vw,46px);line-height:1.12;margin:0 0 16px}.hero p{color:#c9d6e3;font-size:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:10px;border:0;cursor:pointer}
+.btn:hover{background:var(--accent2)}.btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.hero .note{font-size:14px;color:#9fb3c8;margin-top:12px}
+.mock{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
+section{padding:64px 0}section.soft{background:var(--soft)}h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}.lead{color:var(--muted);max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted)}
+.pain li{margin:8px 0}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.tier{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.tier.best{border:2px solid var(--accent);position:relative}.tier.best:before{content:"Best value";position:absolute;top:-12px;left:20px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px}
+.price{font-size:36px;font-weight:800;margin:6px 0}.tier ul{padding-left:18px;color:var(--muted);flex:1;font-size:15px}.tier .btn{text-align:center}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}summary{font-weight:700;cursor:pointer}
+footer{background:var(--navy);color:#9fb3c8;padding:28px 0;font-size:14px}footer a{color:#c9d6e3}
+@media (max-width:860px){.hero,.grid{grid-template-columns:1fr}.prices{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.prices{grid-template-columns:1fr}}
+.langs{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}.langs a{color:inherit;opacity:.7;text-decoration:none;padding:2px 6px;border-radius:6px}.langs a[aria-current]{opacity:1;font-weight:700;outline:1px solid currentColor}@media (max-width:600px){nav{flex-wrap:wrap;row-gap:10px}.langs{order:3;width:100%}}
+</style>
+<link rel="alternate" hreflang="en" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+<link rel="alternate" hreflang="es" href="https://xsvenn.github.io/loopwise-sites/detailos/es/">
+<link rel="alternate" hreflang="fr" href="https://xsvenn.github.io/loopwise-sites/detailos/fr/">
+<link rel="alternate" hreflang="pt" href="https://xsvenn.github.io/loopwise-sites/detailos/pt/">
+<link rel="alternate" hreflang="th" href="https://xsvenn.github.io/loopwise-sites/detailos/th/">
+<link rel="alternate" hreflang="ru" href="https://xsvenn.github.io/loopwise-sites/detailos/ru/">
+<link rel="alternate" hreflang="uk" href="https://xsvenn.github.io/loopwise-sites/detailos/uk/">
+<link rel="alternate" hreflang="ar" href="https://xsvenn.github.io/loopwise-sites/detailos/ar/">
+<link rel="alternate" hreflang="zh" href="https://xsvenn.github.io/loopwise-sites/detailos/zh/">
+<link rel="alternate" hreflang="hi" href="https://xsvenn.github.io/loopwise-sites/detailos/hi/">
+<link rel="alternate" hreflang="x-default" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav><div class="logo">Detail<span>OS</span></div><div class="langs"><a href="../" hreflang="en" lang="en">EN</a><a href="../es/" hreflang="es" lang="es">ES</a><a href="../fr/" hreflang="fr" lang="fr">FR</a><a href="../pt/" hreflang="pt" lang="pt">PT</a><a href="../th/" hreflang="th" lang="th">ไทย</a><a href="../ru/" hreflang="ru" lang="ru">RU</a><a href="../uk/" hreflang="uk" lang="uk">UA</a><a href="../ar/" hreflang="ar" lang="ar">عربي</a><a href="../zh/" hreflang="zh" lang="zh">中文</a><a href="../hi/" hreflang="hi" lang="hi" aria-current="page">हिन्दी</a></div><a class="btn ghost" href="#pricing">अभी लें</a></nav>
+  <div class="hero">
+   <div>
+    <h1>एक ही स्प्रेडशीट से अपना मोबाइल डिटेलिंग बिज़नेस चलाएँ।</h1>
+    <p>हर सर्विस की कीमत मुनाफ़े के हिसाब से तय करें, हर कस्टमर और गाड़ी का रिकॉर्ड रखें, रिपीट बुकिंग से अपना कैलेंडर भरें, और बिना किसी सॉफ़्टवेयर पर पैसा खर्च किए हर महीने अपना असली मुनाफ़ा देखें।</p>
+    <a class="btn" href="#pricing">पैकेज देखें</a>
+    <div class="note">Excel &amp; Google Sheets · तुरंत डाउनलोड · एक बार का भुगतान, कोई सब्सक्रिप्शन नहीं</div>
+   </div>
+   <img class="mock" src="../img/mockup-dashboard.svg" alt="बिज़नेस OS डैशबोर्ड का प्रीव्यू, जिसमें मासिक आय, खर्च और मुनाफ़ा दिखता है">
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <h2>यह जाना-पहचाना लगता है?</h2>
+  <ul class="pain lead">
+   <li>आप हर वीकेंड व्यस्त रहते हैं, पर महीने के अंत में आपको यह पक्का नहीं होता कि आपने असल में कितना कमाया।</li>
+   <li>कीमतें अंदाज़े से तय होती हैं। बड़ी SUV और कुत्तों के बालों वाले इंटीरियर में आपका समय बराबर लगता है, पर पैसा उतना ही मिलता है।</li>
+   <li>कस्टमर आपके फ़ोन, Instagram DMs और नोट्स में बिखरे रहते हैं, और आप उन्हें दोबारा बुक करना भूल जाते हैं।</li>
+   <li>इनवॉइस, कोटेशन और जवाब लिखने में आपकी शामें निकल जाती हैं।</li>
+  </ul>
+ </div>
+</section>
+
+<section class="soft">
+ <div class="wrap">
+  <h2>मोबाइल डिटेलर को जो कुछ चाहिए, सब कुछ यहाँ है</h2>
+  <p class="lead">एक जुड़ी हुई वर्कबुक: जो आप एक बार दर्ज करते हैं, वह कीमतों, इनवॉइस, कस्टमर इतिहास और आपके डैशबोर्ड तक अपने-आप पहुँच जाता है।</p>
+  <div class="grid">
+   <div class="card"><h3>प्राइस &amp; प्रॉफ़िट कैलकुलेटर</h3><p>घंटे, प्रोडक्ट और यात्रा का खर्च डालें। अपने लक्ष्य मार्जिन पर सुझाई गई कीमत और प्रति घंटा मुनाफ़ा पाएँ।</p></div>
+   <div class="card"><h3>कस्टमर CRM</h3><p>संपर्क, स्रोत, सहमति, विज़िट, कुल खर्च और अपने-आप बनने वाली "rebook due" तारीख।</p></div>
+   <div class="card"><h3>वाहन रिकॉर्ड</h3><p>हर गाड़ी का मेक, साइज़ क्लास, पेंट की स्थिति, सिरेमिक कोटिंग की तारीखें और नोट्स।</p></div>
+   <div class="card"><h3>बुकिंग कैलेंडर</h3><p>अपॉइंटमेंट, एडवांस, स्टेटस और रिमाइंडर, सब एक ही सूची में।</p></div>
+   <div class="card"><h3>आय &amp; व्यय</h3><p>टैक्स कैलकुलेशन के साथ जॉब लॉग, वर्गीकृत खर्च और बिना भुगतान वाले इनवॉइस का ट्रैकर।</p></div>
+   <div class="card"><h3>मासिक डैशबोर्ड</h3><p>आय, लागत, मुनाफ़ा, जॉब की संख्या, औसत बिल और प्रति घंटा मुनाफ़ा, चार्ट के साथ।</p></div>
+   <div class="card"><h3>इनवॉइस &amp; प्राइस लिस्ट</h3><p>आपके अपने आँकड़ों से बना, प्रिंट के लिए तैयार इनवॉइस और कस्टमर प्राइस लिस्ट।</p></div>
+   <div class="card"><h3>13 मैसेज स्क्रिप्ट्स</h3><p>पूछताछ के जवाब, कोटेशन, रिमाइंडर, रिव्यू के अनुरोध, रेफ़रल, दोबारा बुकिंग और शिकायतें।</p></div>
+   <div class="card"><h3>गाइड, चेकलिस्ट, मार्केटिंग</h3><p>शुरुआती गाइड, जॉब चेकलिस्ट, सर्विस शर्तों का टेम्पलेट और 30 दिनों के सोशल कंटेंट आइडिया।</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <img class="mock" style="max-width:720px;display:block;margin:0 auto" src="../img/mockup-bundle.svg" alt="कम्प्लीट बंडल में शामिल: वर्कबुक, गाइड, स्क्रिप्ट्स, चेकलिस्ट और मार्केटिंग पैक">
+ </div>
+</section>
+
+<section class="soft" id="pricing">
+ <div class="wrap">
+  <h2>अपना पैकेज चुनें</h2>
+  <p class="lead">एक बार का भुगतान। कीमतें USD में हैं; चेकआउट पर स्थानीय कर जुड़ सकते हैं।</p>
+  <p class="lead"><strong>ध्यान दें: फ़ाइलें स्वयं अंग्रेज़ी में हैं।</strong></p>
+  <div class="prices">
+   <div class="tier"><h3>Starter</h3><div class="price">$9</div>
+    <ul><li>प्राइस &amp; प्रॉफ़िट कैलकुलेटर</li><li>कस्टमर प्राइस लिस्ट</li><li>इनवॉइस टेम्पलेट</li><li>जॉब चेकलिस्ट</li><li>सर्विस शर्तों का टेम्पलेट</li></ul>
+    <a class="btn" href="#" data-tier="starter">Starter खरीदें</a></div>
+   <div class="tier"><h3>Professional</h3><div class="price">$19</div>
+    <ul><li>पूर्ण Business OS वर्कबुक (11 टैब)</li><li>CRM, वाहन, बुकिंग</li><li>आय, खर्च, डैशबोर्ड</li><li>13 ग्राहक संदेश स्क्रिप्ट</li><li>चेकलिस्ट &amp; शर्तें</li></ul>
+    <a class="btn" href="#" data-tier="professional">Professional खरीदें</a></div>
+   <div class="tier"><h3>Business</h3><div class="price">$29</div>
+    <ul><li>Professional में सब कुछ</li><li>Business Starter Guide: मूल्य निर्धारण, उपकरण, पहले 10 ग्राहक, आवर्ती योजनाएँ</li></ul>
+    <a class="btn" href="#" data-tier="business">Business खरीदें</a></div>
+   <div class="tier best"><h3>Complete Bundle</h3><div class="price">$39</div>
+    <ul><li>ऊपर की सभी सुविधाएँ</li><li>मार्केटिंग &amp; सोशल मीडिया पैक</li><li>Google Business Profile चेकलिस्ट</li><li>फ़्लायर &amp; साझेदारी टेम्पलेट</li><li>भविष्य के सभी अपडेट मुफ़्त</li></ul>
+    <a class="btn" href="#" data-tier="bundle">Bundle खरीदें</a></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>FAQ</h2>
+  <details><summary>इसे इस्तेमाल करने के लिए मुझे क्या चाहिए?</summary><p>Microsoft Excel 2019 या नया संस्करण / Microsoft 365, या Google Sheets के लिए एक मुफ़्त Google खाता। Word दस्तावेज़ Word, Google Docs या LibreOffice में खुलते हैं।</p></details>
+  <details><summary>मुझे फ़ाइलें कैसे मिलेंगी?</summary><p>भुगतान के तुरंत बाद आपको स्क्रीन पर और ईमेल द्वारा डाउनलोड लिंक मिल जाएगा।</p></details>
+  <details><summary>क्या यह सदस्यता (subscription) है?</summary><p>नहीं। आप एक बार भुगतान करते हैं और फ़ाइलें हमेशा आपकी रहती हैं।</p></details>
+  <details><summary>क्या यह US के बाहर भी काम करता है?</summary><p>हाँ। आप अपनी मुद्रा का चिह्न और कर/VAT दर स्वयं सेट कर सकते हैं। दूरी किलोमीटर या मील में मापी जा सकती है।</p></details>
+  <details><summary>क्या मैं इसे अपने हिसाब से बदल सकता हूँ?</summary><p>हाँ। सेवाओं के नाम बदलें, कीमतें बदलें, अपना लोगो जोड़ें। शीट्स अनलॉक हैं।</p></details>
+  <details><summary>क्या यह कर या कानूनी सलाह है?</summary><p>नहीं। ये टूल्स आपके आंकड़ों को व्यवस्थित करने में मदद करते हैं। कृपया अपने देश के कर और कानूनी नियमों की जाँच किसी विशेषज्ञ से करवाएँ।</p></details>
+  <details><summary>अगर फ़ाइलों में कोई समस्या हो तो क्या करें?</summary><p>हमें संदेश भेजें <a href="https://wa.me/66650576517?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20DetailOS%20%E0%A4%95%E0%A5%87%20%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%AE%E0%A4%A6%E0%A4%A6%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4" target="_blank" rel="noopener">WhatsApp</a> या hello.loopwise+detailos@outlook.com पर ईमेल करें, और हम इसे चालू करने में आपकी मदद करेंगे। अगर कोई फ़ाइल खराब है और हम उसे ठीक नहीं कर पाते, तो आपको पैसे वापस मिल जाएँगे।</p></details>
+ </div>
+</section>
+
+<section class="soft" id="support">
+ <div class="wrap">
+  <h2>सहायता</h2>
+  <p class="lead">खरीदारी, डाउनलोड या फ़ाइलों के उपयोग के बारे में सवाल हैं? अपनी भाषा में हमें लिखें। आपको आमतौर पर कुछ ही घंटों में ईमेल से जवाब मिल जाएगा।</p>
+  <form id="sf" style="display:grid;gap:12px;max-width:560px;margin-top:18px">
+   <input name="email" type="email" required placeholder="आपका ईमेल (ऑर्डर के लिए इस्तेमाल होगा)" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <input name="subject" required placeholder="विषय" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <textarea name="message" rows="4" required placeholder="हम आपकी कैसे मदद कर सकते हैं?" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px"></textarea>
+   <button class="btn" type="submit">संदेश भेजें</button>
+   <div id="sok" style="display:none;background:#e5f6fb;padding:12px;border-radius:10px"></div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  © <span id="y"></span> DetailOS · <a href="https://wa.me/66650576517" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:hello.loopwise+detailos@outlook.com">hello.loopwise+detailos@outlook.com</a> · <a href="../imprint.html">Imprint</a> · <a href="../privacy.html">गोपनीयता</a> · <a href="../terms.html">शर्तें &amp; रिफ़ंड</a>
+ </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();
+// TODO: replace href="#" on [data-tier] buttons with Payhip product links once the store exists.</script>
+<script>
+const S_OK="धन्यवाद! हमें आपका संदेश मिल गया है और हम ईमेल के माध्यम से जल्द ही आपको जवाब देंगे।";
+const S_ERR="क्षमा करें, वह संदेश भेजा नहीं जा सका। कृपया hello.loopwise+detailos@outlook.com पर ईमेल करें।";
+document.getElementById('sf').addEventListener('submit',async e=>{
+ e.preventDefault();const b=e.target.querySelector('button'),o=document.getElementById('sok');b.disabled=true;
+ const d=Object.fromEntries(new FormData(e.target));d.site='shop';d.lang=document.documentElement.lang;
+ try{const r=await fetch('https://xsvenn.app.n8n.cloud/webhook/loopwise-support',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});if(!r.ok)throw 0;o.textContent=S_OK;e.target.reset();}
+ catch(err){b.disabled=false;o.textContent=S_ERR;}
+ o.style.display='block';
+});
+</script>
+</body>
+</html>

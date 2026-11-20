@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novaframe Studio — ИИ-реклама продуктов</title>
+<meta name="description" content="Кинематографичные рекламные видеоролики для продуктов и брендов на основе ИИ. Качество студии, готово за считанные дни, а не месяцы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07070a; --bg2:#0e0e13; --card:#13131a; --line:#24242e;
+  --text:#f4f2ee; --muted:#9a98a3; --accent:#ff5b2e; --accent2:#ffb347; --cool:#5ad1ff;
+  --radius:18px; --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.05;letter-spacing:-.02em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#120804;box-shadow:0 10px 40px -10px rgba(255,91,46,.7)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 50px -10px rgba(255,91,46,.9)}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{border-color:#44444f}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,7,10,.6);border-bottom:1px solid rgba(255,255,255,.05)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:"Space Grotesk";font-weight:700;font-size:20px;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;border-radius:6px;background:conic-gradient(from 200deg,var(--accent),var(--accent2),var(--cool),var(--accent));display:block}
+.navlinks{display:none;gap:28px;font-size:14px;color:var(--muted)}
+.navlinks a:hover{color:var(--text)}
+@media(min-width:900px){.navlinks{display:flex}}
+.lang{font-size:13px;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 10px;margin-right:10px}
+.navright{display:flex;align-items:center}
+.navright .btn{padding:10px 18px;font-size:14px;white-space:nowrap}
+@media(max-width:520px){.navright .btn{padding:8px 12px;font-size:12px}.logo{font-size:16px;gap:7px}.logo i{width:18px;height:18px}.lang{padding:5px 4px;margin-right:6px}}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,transparent 30%,var(--bg) 75%);z-index:1}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(44px,9vw,112px);font-weight:700;max-width:12ch}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2) 50%,var(--cool));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:clamp(17px,2vw,21px);color:#c9c6cf;max-width:560px;margin:26px 0 36px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero .proof{margin-top:48px;display:flex;flex-wrap:wrap;gap:28px;color:var(--muted);font-size:14px}
+.hero .proof b{color:var(--text);font-family:"Space Grotesk";font-size:22px;display:block}
+.reveal-line{display:block;overflow:hidden}
+.reveal-line span{display:block;transform:translateY(110%);animation:rise 1s cubic-bezier(.2,.8,.2,1) forwards}
+.reveal-line:nth-child(2) span{animation-delay:.12s}
+.reveal-line:nth-child(3) span{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+
+/* MARQUEE */
+.marquee{border-block:1px solid var(--line);padding:18px 0;overflow:hidden;white-space:nowrap;color:var(--muted);font-family:"Space Grotesk";font-size:18px}
+.marquee div{display:inline-block;animation:scroll 40s linear infinite}
+.marquee span{margin:0 28px}
+.marquee span::before{content:"✦";color:var(--accent);margin-right:28px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.sec-head{max-width:720px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(34px,5vw,60px);margin-top:14px}
+.sec-head p{color:var(--muted);margin-top:18px;font-size:18px}
+
+/* STYLES */
+.styles{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:700px){.styles{grid-template-columns:1fr 1fr}}
+@media(min-width:1050px){.styles{grid-template-columns:repeat(3,1fr)}}
+.style{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--card);isolation:isolate;transition:transform .4s}
+.style:hover{transform:translateY(-6px)}
+.style .vis{position:absolute;inset:0;z-index:-1;transition:transform 1.2s}
+.style:hover .vis{transform:scale(1.06)}
+.style .info{position:absolute;inset:auto 0 0 0;padding:26px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.style h3{font-size:26px}
+.style small{color:var(--accent2);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.style p{color:#cfccd6;font-size:14px;margin-top:8px}
+/* animated visuals — pure CSS, one per style */
+.v-kinetic{background:#0b0b0b}
+.v-kinetic::before{content:"";position:absolute;inset:-20%;background:repeating-linear-gradient(115deg,transparent 0 38px,rgba(255,91,46,.85) 38px 44px,transparent 44px 120px);animation:slide 2.2s linear infinite}
+.v-kinetic::after{content:"MOVE";position:absolute;top:22%;left:-5%;font:700 120px/1 "Space Grotesk";color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.85);transform:skewX(-12deg)}
+@keyframes slide{to{transform:translateX(120px)}}
+.v-pov{background:radial-gradient(circle at 50% 50%,#1b3b55,#05080c 70%)}
+.v-pov::before{content:"";position:absolute;inset:-50%;background:conic-gradient(from 0deg,transparent 0 20deg,rgba(90,209,255,.35) 20deg 22deg,transparent 22deg 60deg,rgba(255,255,255,.18) 60deg 61deg,transparent 61deg 120deg);animation:spin 3s linear infinite}
+.v-pov::after{content:"";position:absolute;left:50%;top:42%;width:90px;height:90px;margin:-45px;border:2px solid rgba(255,255,255,.8);border-radius:50%;box-shadow:0 0 0 14px rgba(90,209,255,.15)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.v-aerial{background:linear-gradient(180deg,#f7b267 0%,#f4845f 30%,#5b3a5e 62%,#1c1b2e 100%)}
+.v-aerial::before{content:"";position:absolute;inset:55% -20% 0;background:repeating-linear-gradient(170deg,#1c1b2e 0 10px,#26233d 10px 22px);clip-path:polygon(0 40%,15% 10%,30% 35%,48% 0,63% 30%,80% 8%,100% 32%,100% 100%,0 100%);animation:drift 9s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translateX(-12%) scale(1.08)}}
+.v-refresh{background:radial-gradient(circle at 50% 35%,#ff3b3b,#8c0b12 60%,#2a0306)}
+.v-refresh::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.7) 0 2px,transparent 3px),radial-gradient(circle,rgba(255,255,255,.45) 0 3px,transparent 4px);background-size:38px 52px,61px 77px;animation:bubbles 4s linear infinite}
+@keyframes bubbles{to{background-position:0 -520px,0 -770px}}
+.v-minimal{background:radial-gradient(ellipse at 50% 30%,#2c2c34,#0c0c10 70%)}
+.v-minimal::before{content:"";position:absolute;left:50%;top:38%;width:120px;height:160px;margin-left:-60px;border-radius:26px;background:linear-gradient(145deg,#e8e6ef,#8d8b96);box-shadow:0 40px 60px -20px rgba(0,0,0,.8);animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-18px) rotate(-3deg)}}
+.v-luxe{background:radial-gradient(circle at 70% 30%,#3a2a12,#0a0806 65%)}
+.v-luxe::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 40%,rgba(255,215,140,.35) 50%,transparent 60%);background-size:300% 100%;animation:shine 4s ease-in-out infinite}
+.v-luxe::after{content:"";position:absolute;left:50%;top:36%;width:110px;height:110px;margin-left:-55px;border-radius:50%;border:3px solid #d9b46a;box-shadow:inset 0 0 30px rgba(217,180,106,.4),0 0 60px rgba(217,180,106,.25)}
+@keyframes shine{0%{background-position:100% 0}100%{background-position:-100% 0}}
+
+/* PROCESS */
+.steps{display:grid;gap:18px;grid-template-columns:1fr;counter-reset:s}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{padding:30px;border-radius:var(--radius);background:var(--bg2);border:1px solid var(--line);counter-increment:s}
+.step::before{content:"0" counter(s);font:700 14px "Space Grotesk";color:var(--accent)}
+.step h3{font-size:22px;margin:14px 0 10px}
+.step p{color:var(--muted);font-size:15px}
+
+/* DEMO */
+.demo{border-radius:28px;padding:48px 24px;background:radial-gradient(ellipse at 0 0,rgba(255,91,46,.18),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(90,209,255,.14),transparent 55%),var(--bg2);border:1px solid var(--line);display:grid;gap:40px}
+@media(min-width:900px){.demo{grid-template-columns:1.1fr 1fr;padding:64px}}
+.demo h2{font-size:clamp(32px,4.5vw,52px);margin:14px 0 16px}
+.demo ul{list-style:none;color:#cfccd6;margin-top:22px}
+.demo li{padding:6px 0}
+.demo li::before{content:"→ ";color:var(--accent2)}
+form{display:grid;gap:14px}
+label{font-size:13px;color:var(--muted)}
+input,select,textarea{width:100%;background:#0b0b10;border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--text);font:inherit}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+.drop{border:1.5px dashed #3a3a46;border-radius:16px;padding:28px;text-align:center;color:var(--muted);cursor:pointer;transition:border-color .2s}
+.drop:hover{border-color:var(--accent)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+.check input{width:auto;margin-top:3px}
+.note{font-size:12px;color:var(--muted)}
+
+.result{margin-top:24px;padding:36px 24px;border-radius:28px;background:var(--bg2);border:1px solid var(--line);display:grid;gap:14px}
+.result h3{font-size:clamp(26px,4vw,40px)}
+.result p{color:#d8d5de}
+.board{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin:8px 0}
+.frame{aspect-ratio:9/12;border-radius:14px;padding:16px;background:linear-gradient(160deg,#1c1c25,#0b0b10);border:1px solid var(--line);display:flex;flex-direction:column;gap:8px;font-size:14px;position:relative;overflow:hidden}
+.frame::after{content:"NOVAFRAME PREVIEW";position:absolute;bottom:10px;right:-30px;transform:rotate(-30deg);font:700 11px "Space Grotesk";color:rgba(255,255,255,.12);letter-spacing:.2em}
+.frame span{font:700 12px "Space Grotesk";color:var(--accent)}
+.frame em{color:var(--accent2);font-style:normal;margin-top:auto}
+.rec{padding:14px 18px;border-radius:12px;background:rgba(255,91,46,.1);border:1px solid rgba(255,91,46,.3)}
+button:disabled{opacity:.6;cursor:wait}
+/* PRICING */
+.toggle{display:inline-flex;padding:5px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);margin-bottom:36px}
+.toggle button{background:none;border:0;color:var(--muted);padding:10px 20px;border-radius:999px;font:600 14px Inter;cursor:pointer}
+.toggle button.on{background:var(--text);color:#0a0a0a}
+.plans{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:960px){.plans{grid-template-columns:repeat(3,1fr)}}
+.plan{padding:34px;border-radius:24px;background:var(--bg2);border:1px solid var(--line);display:flex;flex-direction:column}
+.plan.featured{background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(135deg,var(--accent),var(--accent2),var(--cool)) border-box;border:1.5px solid transparent;position:relative}
+.plan.featured::before{content:"Most chosen";position:absolute;top:-13px;left:34px;background:var(--accent);color:#120804;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:24px}
+.plan .for{color:var(--muted);font-size:14px;margin:6px 0 22px}
+.price{font:700 48px "Space Grotesk"}
+.price small{font:500 15px Inter;color:var(--muted)}
+.plan ul{list-style:none;margin:24px 0 30px;display:grid;gap:10px;font-size:15px;color:#d8d5de;flex:1}
+.plan li::before{content:"✓";color:var(--accent2);margin-right:10px}
+.plan .btn{justify-content:center}
+.hidden{display:none!important}
+.addons{margin-top:28px;color:var(--muted);font-size:14px}
+
+/* FAQ */
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{cursor:pointer;font:600 18px "Space Grotesk";list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";color:var(--accent);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:12px;max-width:760px}
+
+/* CTA + FOOTER */
+.final{text-align:center;padding:140px 0}
+.final h2{font-size:clamp(40px,7vw,90px);max-width:14ch;margin:0 auto 34px}
+footer{border-top:1px solid var(--line);padding:50px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between}
+footer nav{position:static;background:none;border:0;backdrop-filter:none;display:flex;gap:20px;flex-wrap:wrap}
+
+.js .fade{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .fade.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade{opacity:1;transform:none}.reveal-line span{transform:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a href="#" class="logo"><i></i>Novaframe</a>
+    <div class="navlinks">
+      <a href="#styles">Стили</a><a href="#process">Как это работает</a><a href="#pricing">Цены</a><a href="#faq">FAQ</a>
+    </div>
+    <div class="navright">
+      <select class="lang" aria-label="Language" onchange="if(this.value)location.href=this.value">
+        <option value="../">EN</option><option value="" selected>RU</option><option value="../uk/">UA</option><option value="../ar/">عربي</option><option value="../zh/">中文</option><option value="../hi/">हिन्दी</option>
+      </select>
+      <a href="#demo" class="btn btn-primary">Бесплатная концепция</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">Студия рекламы на основе ИИ</p>
+    <h1>
+      <span class="reveal-line"><span>Мирового уровня</span></span>
+      <span class="reveal-line"><span><em>ролики</em></span></span>
+      <span class="reveal-line"><span>для вашего продукта.</span></span>
+    </h1>
+    <p class="lead">Кинематографичная реклама продуктов в стиле самых смелых брендов мира — создана с помощью ИИ, поставлена людьми и готова за дни, а не месяцы.</p>
+    <div class="ctas">
+      <a href="#demo" class="btn btn-primary">Получите бесплатную концепцию с ИИ →</a>
+      <a href="#pricing" class="btn btn-ghost">Смотреть пакеты</a>
+    </div>
+    <div class="proof">
+      <div><b>5–10 дней</b>типичный срок</div>
+      <div><b>9:16 · 1:1 · 4:5 · 16:9</b>любая платформа</div>
+      <div><b>7 языков</b>глобальный сервис</div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>E-commerce</span><span>Кроссовки &amp; мода</span><span>Экшн-камеры</span><span>Дроны</span><span>Напитки</span><span>Косметика</span><span>Электроника</span><span>Люкс</span><span>Restaurants</span><span>Отели</span>
+  <span>E-commerce</span><span>Кроссовки &amp; мода</span><span>Экшн-камеры</span><span>Дроны</span><span>Напитки</span><span>Косметика</span><span>Электроника</span><span>Люкс</span><span>Restaurants</span><span>Отели</span>
+</div></div>
+
+<section id="styles">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <p class="eyebrow">Фирменные стили</p>
+      <h2>Стиль глобальной кампании. Создано вокруг вашего продукта.</h2>
+      <p>Выберите направление — наш креативный директор адаптирует его под ваш бренд, аудиторию и платформу. Каждый ролик уникален.</p>
+    </div>
+    <div class="styles">
+      <article class="style fade"><div class="vis v-kinetic"></div><div class="info"><small>Sport · Fashion · Fitness</small><h3>Kinetic Hero</h3><p>Жёсткий контраст, монтаж в такт музыке, замедленные кульминационные моменты. Ваш продукт — в центре внимания.</p></div></article>
+      <article class="style fade"><div class="vis v-pov"></div><div class="info"><small>Gadgets · Outdoor · Travel</small><h3>POV Rush</h3><p>Энергия от первого лица, динамичные наплывы скорости и повороты на 360°, которые погружают зрителя в действие.</p></div></article>
+      <article class="style fade"><div class="vis v-aerial"></div><div class="info"><small>Tech · Tourism · Automotive</small><h3>Aerial Epic</h3><p>Панорамные пролёты, свет золотого часа и медленное кинематографичное раскрытие продукта.</p></div></article>
+      <article class="style fade"><div class="vis v-refresh"></div><div class="info"><small>Drinks · Food · Restaurants</small><h3>Pure Refresh</h3><p>Макросъёмка конденсата, брызги и замедленные переливы. Реклама, которую почти можно попробовать на вкус.</p></div></article>
+      <article class="style fade"><div class="vis v-minimal"></div><div class="info"><small>Электроника · Beauty · Premium</small><h3>Studio Minimal</h3><p>Парящий продукт, мягкий студийный свет, спокойные движения камеры. Тихая уверенность.</p></div></article>
+      <article class="style fade"><div class="vis v-luxe"></div><div class="info"><small>Люкс · Jewellery · Fragrance</small><h3>Noir Luxe</h3><p>Глубокие тени, золотые отблески, шёлк и дым. Создано для премиальных брендов.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <p class="eyebrow">Как это работает</p>
+      <h2>От фотографии продукта до готовой рекламы.</h2>
+    </div>
+    <div class="steps">
+      <div class="step fade"><h3>Выберите и оплатите</h3><p>Выберите пакет. Безопасная оплата в вашей валюте.</p></div>
+      <div class="step fade"><h3>Бриф и загрузка</h3><p>Загрузите фото продукта и логотип, ответьте на короткий креативный бриф.</p></div>
+      <div class="step fade"><h3>Концепция &amp; производство</h3><p>Раскадровка, сцены, созданные ИИ, монтаж и звуковой дизайн — всё проверено нашим отделом контроля качества.</p></div>
+      <div class="step fade"><h3>Просмотр и загрузка</h3><p>Просмотрите результат в личном кабинете, запросите правки, утвердите и скачайте каждый формат.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="wrap">
+    <div class="demo fade">
+      <div>
+        <p class="eyebrow">Бесплатно · оплата не нужна</p>
+        <h2>Увидьте свой товар в роли рекламного ролика — до покупки.</h2>
+        <p style="color:var(--muted)">Загрузите одно фото товара. Наш ИИ-креативный директор проанализирует его и пришлёт персональную концепцию рекламы с кадрами раскадровки.</p>
+        <ul>
+          <li>Концепция, цепляющее начало и раскадровка по сценам</li>
+          <li>Превью-кадры с водяным знаком</li>
+          <li>Ваше изображение остаётся конфиденциальным и не сохраняется</li>
+        </ul>
+      </div>
+      <form id="demoForm" onsubmit="event.preventDefault();demoSubmit()">
+        <div class="drop" onclick="document.getElementById('file').click()">
+          <strong id="fileLabel">Перетащите фото товара сюда</strong><br><span class="note">JPG или PNG, не более 10 МБ</span>
+          <input id="file" type="file" accept="image/jpeg,image/png" hidden required onchange="document.getElementById('fileLabel').textContent=this.files[0]?.name||'Перетащите фото товара сюда'">
+        </div>
+        <div><label for="pname">Название товара (необязательно)</label><input id="pname" placeholder="например, беговые кроссовки Trailblazer 2"></div>
+        <div><label for="style">Предпочтительный стиль</label>
+          <select id="style"><option>Пусть решит ИИ</option><option>Kinetic Hero</option><option>POV Rush</option><option>Aerial Epic</option><option>Pure Refresh</option><option>Studio Minimal</option><option>Noir Luxe</option></select></div>
+        <div><label for="email">Эл. почта для вашей концепции</label><input id="email" type="email" required placeholder="you@company.com"></div>
+        <label class="check"><input type="checkbox" required> Я являюсь владельцем этого изображения или имею разрешение на его использование и согласен с политикой конфиденциальности.</label>
+        <button class="btn btn-primary" type="submit">Создать мою бесплатную концепцию →</button>
+        <p class="note" id="demoMsg">Демо — это превью концепции, а не финальный ролик. Ограничение: одна бесплатная концепция на компанию.</p>
+      </form>
+    </div>
+    <div id="demoResult" class="result" hidden aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="pricing" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <p class="eyebrow">Пакеты</p>
+      <h2>Понятные цены. Никаких сюрпризов.</h2>
+      <p>Цены в долларах США. Там, где это возможно, при оплате отображаются в вашей местной валюте.</p>
+      <p>Оплачиваете через PayPal? Пожалуйста, укажите название пакета и свой email в примечании к платежу PayPal.</p>
+    </div>
+    <div class="toggle" role="tablist">
+      <button class="on" onclick="plan('once',this)">Одиночный ролик</button>
+      <button onclick="plan('sub',this)">Ежемесячный контент</button>
+    </div>
+
+    <div class="plans" id="once">
+      <div class="plan fade"><h3>Starter Ad</h3><p class="for">Ваша первая профессиональная реклама товара</p>
+        <div class="price">$290</div>
+        <ul><li>Видео 10–15 секунд</li><li>1 креативная концепция</li><li>ИИ-визуализация товара</li><li>Лицензированная музыка, интеграция логотипа</li><li>1 формат для соцсетей</li><li>1 правка</li></ul>
+        <a class="btn btn-ghost" data-plan="starter" href="#">Заказать стартовую рекламу</a></div>
+      <div class="plan featured fade"><h3>Professional Commercial</h3><p class="for">Для брендов, которые хотят выделяться</p>
+        <div class="price">$790</div>
+        <ul><li>Ролик 15–30 секунд</li><li>Индивидуальная концепция + раскадровка</li><li>Несколько кинематографичных сцен</li><li>Премиальные переходы &amp; звуковой дизайн</li><li>4 формата для платформ</li><li>2 правки</li></ul>
+        <a class="btn btn-primary" data-plan="professional" href="#">Заказать Professional</a></div>
+      <div class="plan fade"><h3>Premium Brand Campaign</h3><p class="for">Сторителлинг уровня крупной кампании</p>
+        <div class="price"><small>от</small> $1,690</div>
+        <ul><li>Флагманский фильм 30–60 секунд</li><li>Продвинутая раскадровка &amp; VFX</li><li>Визуальное направление под ваш бренд</li><li>Укороченные версии &amp; все форматы кадра</li><li>2 согласованные правки</li><li>Приоритетное производство</li></ul>
+        <a class="btn btn-ghost" data-plan="premium" href="#">Запросить Premium</a></div>
+    </div>
+
+    <div class="plans hidden" id="sub">
+      <div class="plan fade in"><h3>Starter Content</h3><p class="for">Постоянное присутствие в соцсетях</p>
+        <div class="price">$590<small> / месяц</small></div>
+        <ul><li>4 коротких видео в месяц</li><li>Единый фирменный стиль</li><li>Ежемесячный контент-план</li><li>Отмена подписки в любой момент</li></ul>
+        <a class="btn btn-ghost" data-plan="sub_starter" href="#">Подписаться</a></div>
+      <div class="plan featured fade in"><h3>Growth Content</h3><p class="for">Тестируйте больше идей — привлекайте больше клиентов</p>
+        <div class="price">$990<small> / месяц</small></div>
+        <ul><li>8 коротких видео в месяц</li><li>Несколько концепций рекламы &amp; зацепок</li><li>Версии под каждую платформу</li><li>Отмена подписки в любой момент</li></ul>
+        <a class="btn btn-primary" data-plan="sub_growth" href="#">Подписаться на Growth</a></div>
+      <div class="plan fade in"><h3>Brand Content Pro</h3><p class="for">Постоянный креатив для растущих брендов</p>
+        <div class="price">$1,490<small> / месяц</small></div>
+        <ul><li>12 коротких видео в месяц</li><li>Продвинутое креативное планирование</li><li>Приоритетное производство</li><li>Ежемесячный обзор результатов</li></ul>
+        <a class="btn btn-ghost" data-plan="sub_pro" href="#">Подписаться на Pro</a></div>
+    </div>
+    <p class="addons">Дополнительно: дополнительный формат, озвучка, локализованные версии на других языках, предметная съёмка товара (в отдельных регионах). Неиспользованные видео за месяц на следующий месяц не переносятся.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head fade"><p class="eyebrow">FAQ</p><h2>Отличные вопросы.</h2></div>
+    <details><summary>Видео полностью создано ИИ?</summary><p>Сцены генерируются ведущими ИИ-моделями для видео, а концепцию, монтаж, звук и контроль качества направляет и проверяет наша команда. Ваш продукт, логотип и упаковка никогда не изменяются без вашего одобрения.</p></details>
+    <details><summary>Можно ли использовать видео в платной рекламе?</summary><p>Да. Вы получаете коммерческие права на использование готового видео, включая платную рекламу в соцсетях и интернете. Музыка лицензирована для коммерческого использования.</p></details>
+    <details><summary>Вы гарантируете продажи или просмотры?</summary><p>Нет, честно гарантировать это не может никто. Мы создаём рекламное видео, а запуск и оптимизация рекламных кампаний — отдельная услуга.</p></details>
+    <details><summary>В каких странах вы работаете?</summary><p>Мы работаем с клиентами по всему миру на английском, немецком, тайском, испанском, французском, арабском и японском языках. Предметная съёмка товара доступна только в отдельных регионах.</p></details>
+    <details><summary>Что происходит с загруженными мной файлами?</summary><p>Файлы хранятся конфиденциально, используются только для вашего проекта и никогда не показываются в нашем портфолио без вашего явного разрешения.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap fade">
+    <h2>Ваш продукт заслуживает <em style="font-style:normal;color:var(--accent)">по-настоящему</em> продающего ролика.</h2>
+    <a href="#demo" class="btn btn-primary">Получите бесплатную концепцию с ИИ →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><div class="logo" style="margin-bottom:8px"><i></i>Novaframe Studio</div>© 2026 · Рекламные видео на основе ИИ</div>
+    <nav aria-label="Footer"><a href="../imprint.html">Выходные данные</a><a href="../privacy.html">Конфиденциальность</a><a href="../terms.html">Условия использования</a><a href="../terms.html#refund">Политика возврата</a><a href="mailto:novaframe.hq@outlook.com">Контакты</a></nav>
+  </div>
+</footer>
+
+<script>
+// Hero: light streaks (canvas), pauses for reduced motion
+(function(){
+  const c=document.getElementById('fx'),x=c.getContext('2d');let w,h,P=[];
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){w=c.width=innerWidth*devicePixelRatio;h=c.height=c.offsetHeight*devicePixelRatio}
+  size();addEventListener('resize',size);
+  const cols=['255,91,46','255,179,71','90,209,255'];
+  for(let i=0;i<70;i++)P.push({x:Math.random(),y:Math.random(),v:.0006+Math.random()*.0025,l:.05+Math.random()*.25,c:cols[i%3],a:.15+Math.random()*.5});
+  function draw(){
+    x.clearRect(0,0,w,h);x.lineCap='round';
+    for(const p of P){
+      const X=p.x*w,Y=p.y*h,L=p.l*w;
+      const g=x.createLinearGradient(X-L,Y,X,Y);g.addColorStop(0,`rgba(${p.c},0)`);g.addColorStop(1,`rgba(${p.c},${p.a})`);
+      x.strokeStyle=g;x.lineWidth=2*devicePixelRatio;x.beginPath();x.moveTo(X-L,Y+L*.18);x.lineTo(X,Y);x.stroke();
+      p.x+=p.v;p.y-=p.v*.18;if(p.x-p.l>1||p.y<0){p.x=-.1;p.y=Math.random()*1.1}
+    }
+    if(!reduce)requestAnimationFrame(draw);
+  }
+  draw();
+})();
+// Scroll reveal
+document.documentElement.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px -5% 0px'});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+addEventListener('scroll',()=>document.querySelectorAll('.fade:not(.in)').forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in')}),{passive:true});
+// Pricing toggle
+function plan(id,b){document.querySelectorAll('.toggle button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  document.getElementById('once').classList.toggle('hidden',id!=='once');document.getElementById('sub').classList.toggle('hidden',id!=='sub')}
+// ===== CONFIG: only place to change links =====
+const CONFIG={
+  demoUrl:'https://xsvenn.app.n8n.cloud/webhook/novaframe-demo',
+  // Checkout links (PayPal/Paddle/Stripe). Empty = button opens contact email.
+  // PayPal.Me mit festem Betrag. Premium ("ab") und Abos laufen ueber Anfrage + Rechnung.
+  checkout:{starter:'https://www.paypal.me/xsvennn/290USD',professional:'https://www.paypal.me/xsvennn/790USD',premium:'',sub_starter:'',sub_growth:'',sub_pro:''},
+  contact:'mailto:novaframe.hq@outlook.com?subject=Novaframe%20order'
+};
+const PLAN_NAME={starter:'Novaframe Starter',professional:'Novaframe Professional'};
+const PAY_NOTE='Важно: в примечании к платежу PayPal напишите «{plan}» и свой адрес электронной почты, чтобы мы могли сопоставить платёж и сразу начать ваш проект.';
+document.querySelectorAll('[data-plan]').forEach(a=>{a.href=CONFIG.checkout[a.dataset.plan]||CONFIG.contact+'%20-%20'+a.dataset.plan;
+  if(/paypal\.me/.test(a.href)){a.target='_blank';a.rel='noopener';a.addEventListener('click',e=>{if(!confirm(PAY_NOTE.replace('{plan}',PLAN_NAME[a.dataset.plan]||a.dataset.plan)))e.preventDefault()})}});
+// Demo: shrink image in the browser (saves AI cost), send to n8n, show concept
+function shrink(file){return new Promise((ok,err)=>{const i=new Image();i.onload=()=>{const s=Math.min(1,768/Math.max(i.width,i.height));const c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);ok(c.toDataURL('image/jpeg',.82))};i.onerror=err;i.src=URL.createObjectURL(file)})}
+const esc=t=>String(t??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const MSG={limit_reached:'Вы уже получили бесплатную концепцию по этому email. Выберите пакет, чтобы получить готовый коммерческий ролик целиком.',invalid_email:'Пожалуйста, введите корректный адрес электронной почты.',invalid_image:'Пожалуйста, загрузите фото в формате JPG или PNG.',image_too_large:'Это изображение слишком большое.',rights_not_confirmed:'Пожалуйста, подтвердите, что вы имеете право использовать это изображение.'};
+async function demoSubmit(){
+  const msg=document.getElementById('demoMsg'),btn=document.querySelector('#demoForm button'),f=document.getElementById('file').files[0];
+  if(!f){msg.textContent='Пожалуйста, выберите фото товара.';return}
+  btn.disabled=true;btn.textContent='Наш AI-креативный директор уже работает…';msg.textContent='Это займёт около 10–20 секунд.';
+  try{
+    const r=await fetch(CONFIG.demoUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({image:await shrink(f),email:document.getElementById('email').value,product:document.getElementById('pname').value,style:document.getElementById('style').value,lang:document.documentElement.lang,rights:true})});
+    const d=await r.json();
+    if(!d.ok){msg.textContent=MSG[d.error]||'Что-то пошло не так. Пожалуйста, попробуйте позже.';return}
+    const c=d.concept;
+    if(!c.ok){msg.textContent=c.reason==='parse_error'?'Что-то пошло не так. Пожалуйста, попробуйте позже.':esc(c.reason);return}
+    const box=document.getElementById('demoResult');
+    box.innerHTML=`<p class="eyebrow">Ваша концепция · ${esc(c.style)}</p><h3>${esc(c.title)}</h3><p><b>Hook:</b> ${esc(c.hook)}</p><p><b>Аудитория:</b> ${esc(c.audience)}</p>
+      <div class="board">${(c.scenes||[]).map((s,i)=>`<div class="frame"><span>${esc(s.t)}</span><p>${esc(s.shot)}</p>${s.text?`<em>“${esc(s.text)}”</em>`:''}</div>`).join('')}</div>
+      <p><b>Музыка:</b> ${esc(c.music)} · <b>Финальный кадр:</b> ${esc(c.cta)}</p>
+      <p class="rec">Рекомендуем: <b>${esc(c.package)}</b> — ${esc(c.why)}</p>
+      <a class="btn btn-primary" href="#pricing">Превратить это в мой ролик →</a><p class="note">Это только предварительный просмотр концепции, а не готовый ролик.</p>`;
+    box.hidden=false;box.scrollIntoView({behavior:'smooth'});msg.textContent='';
+  }catch(e){msg.textContent='Проблема с подключением. Пожалуйста, попробуйте снова через минуту.'}
+  finally{btn.disabled=false;btn.textContent='Создать мою бесплатную концепцию →'}
+}
+</script>
+</body>
+</html>

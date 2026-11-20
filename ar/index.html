@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loopwise – أتمتة تحوّل الاستفسارات إلى حجوزات مؤكدة</title>
+<meta name="description" content="استقبال العملاء المحتملين، والردود الفورية، والحجز، والتذكيرات، وطلبات التقييم، والمساعدون الأذكياء لمحترفي التفصيل والشركات الخدمية المحلية. أسعار ثابتة، وتعمل خلال أيام.">
+<style>
+:root{--ink:#14161f;--violet:#5b4bff;--violet2:#4335e0;--mint:#14b88a;--soft:#f5f4ff;--muted:#5d6275;--line:#e3e2f0}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);line-height:1.55;background:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}a{color:var(--violet2)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}.logo{font-weight:800;font-size:20px}.logo b{color:var(--violet)}
+.btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:10px;border:0;cursor:pointer;font-size:16px}.btn:hover{background:var(--violet2)}
+.btn.line{background:#fff;color:var(--violet);border:2px solid var(--violet)}
+.hero{padding:40px 0 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+h1{font-size:clamp(28px,4.6vw,48px);line-height:1.1;margin:0 0 16px}.hero p{font-size:18px;color:var(--muted)}
+.flow{background:var(--soft);border-radius:18px;padding:22px}.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;display:flex;gap:10px;align-items:center;font-size:15px}
+.step i{font-style:normal;background:var(--violet);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:13px;flex:none}
+section{padding:64px 0}.soft{background:var(--soft)}h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 10px}.lead{color:var(--muted);max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted)}
+.tier{display:flex;flex-direction:column}.tier .price{font-size:30px;font-weight:800;margin:6px 0 2px}.tier small{color:var(--muted)}.tier ul{padding-left:18px;color:var(--muted);flex:1}
+.contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.btn.wa{background:#1fa855}.btn.wa:hover{background:#178a45}
+.tier.pop{border:2px solid var(--violet)}
+form{display:grid;gap:12px;max-width:560px;margin-top:22px}input,select,textarea{font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;width:100%}
+label{font-weight:600;font-size:14px}.ok{display:none;background:#e5f8f1;color:#0c6b50;padding:14px;border-radius:10px}
+footer{background:var(--ink);color:#a9adbf;padding:28px 0;font-size:14px}footer a{color:#d6d8e4}
+@media (max-width:860px){.hero,.grid{grid-template-columns:1fr}}
+.langs{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}.langs a{color:inherit;opacity:.7;text-decoration:none;padding:2px 6px;border-radius:6px}.langs a[aria-current]{opacity:1;font-weight:700;outline:1px solid currentColor}@media (max-width:600px){nav{flex-wrap:wrap;row-gap:10px}.langs{order:3;width:100%}}
+</style>
+<link rel="alternate" hreflang="en" href="https://xsvenn.github.io/loopwise-sites/">
+<link rel="alternate" hreflang="es" href="https://xsvenn.github.io/loopwise-sites/es/">
+<link rel="alternate" hreflang="fr" href="https://xsvenn.github.io/loopwise-sites/fr/">
+<link rel="alternate" hreflang="pt" href="https://xsvenn.github.io/loopwise-sites/pt/">
+<link rel="alternate" hreflang="th" href="https://xsvenn.github.io/loopwise-sites/th/">
+<link rel="alternate" hreflang="ru" href="https://xsvenn.github.io/loopwise-sites/ru/">
+<link rel="alternate" hreflang="uk" href="https://xsvenn.github.io/loopwise-sites/uk/">
+<link rel="alternate" hreflang="ar" href="https://xsvenn.github.io/loopwise-sites/ar/">
+<link rel="alternate" hreflang="zh" href="https://xsvenn.github.io/loopwise-sites/zh/">
+<link rel="alternate" hreflang="hi" href="https://xsvenn.github.io/loopwise-sites/hi/">
+<link rel="alternate" hreflang="x-default" href="https://xsvenn.github.io/loopwise-sites/">
+</head>
+<body>
+<div class="wrap"><nav><div class="logo">Loop<b>wise</b></div><div class="langs"><a href="../" hreflang="en" lang="en">EN</a><a href="../es/" hreflang="es" lang="es">ES</a><a href="../fr/" hreflang="fr" lang="fr">FR</a><a href="../pt/" hreflang="pt" lang="pt">PT</a><a href="../th/" hreflang="th" lang="th">ไทย</a><a href="../ru/" hreflang="ru" lang="ru">RU</a><a href="../uk/" hreflang="uk" lang="uk">UA</a><a href="../ar/" hreflang="ar" lang="ar" aria-current="page">عربي</a><a href="../zh/" hreflang="zh" lang="zh">中文</a><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></div><a class="btn line" href="#audit">فحص مجاني</a></nav></div>
+
+<div class="wrap hero">
+ <div>
+  <h1>توقف عن خسارة الحجوزات بسبب بطء الرد.</h1>
+  <p>نصمم أتمتة لمحترفي التفصيل والشركات الخدمية المحلية. يحصل كل استفسار على رد فوري، ويُحجز ويُذكَّر به، ويتحول إلى تقييم وعميل يعود مجددًا، بينما أنت منشغل بعملك.</p>
+  <a class="btn" href="#audit">احصل على فحص مجاني للأتمتة</a>
+ </div>
+ <div class="flow" aria-label="مثال على أتمتة">
+  <div class="step"><i>1</i>يملأ العميل نموذجك أو يراسلك في التاسعة مساءً</div>
+  <div class="step"><i>2</i>رد فوري يتضمن الأسعار والمواعيد المتاحة مجانًا</div>
+  <div class="step"><i>3</i>يُحفظ العميل المحتمل في نظام إدارة العملاء ويُصنَّف ساخنًا أو دافئًا أو باردًا</div>
+  <div class="step"><i>4</i>تأكيد الحجز، وإرسال تذكير قبل يوم</div>
+  <div class="step"><i>5</i>طلب تقييم بعد إنجاز العمل، وعرض لإعادة الحجز بعد 8 أسابيع</div>
+ </div>
+</div>
+
+<section class="soft"><div class="wrap">
+ <h2>ما نبنيه</h2>
+ <p class="lead">أنظمة صغيرة ومركّزة، لكل منها مهمة واحدة واضحة. مبنية على أدوات موثوقة، ومُوثّقة ومُسلَّمة إليك.</p>
+ <div class="grid">
+  <div class="card"><h3>استقبال العملاء المحتملين</h3><p>صفحة هبوط أو نموذج موقع يجمع بدقة ما تحتاجه لتقديم عرض السعر.</p></div>
+  <div class="card"><h3>ردود فورية</h3><p>رد بأسلوب شخصي خلال دقيقة، نهارًا أو ليلًا.</p></div>
+  <div class="card"><h3>نظام إدارة علاقات بسيط</h3><p>كل عميل محتمل وكل عميل في مكان واحد، مع الحالة والقيمة والخطوة التالية.</p></div>
+  <div class="card"><h3>الحجز &amp; التذكيرات</h3><p>حجز إلكتروني مرتبط بتقويمك، مع تذكيرات تلقائية.</p></div>
+  <div class="card"><h3>التقييمات &amp; إعادة الحجز</h3><p>طلبات تقييم في الوقت المناسب، وعروض لإعادة الحجز تعيد عملاءك إليك.</p></div>
+  <div class="card"><h3>المساعد الذكي</h3><p>يجيب عن الأسئلة الشائعة من قائمة أسعارك وأسئلتك المتكررة، ويحيل إليك أي سؤال غير واضح.</p></div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <h2>الباقات</h2>
+ <p class="lead">أسعار البداية واضحة، ويُرسل عرض السعر الدقيق بعد الفحص المجاني. تُدفع رسوم الأدوات التابعة لجهات خارجية (إن وجدت) مباشرةً إلى مزوّدها.</p>
+ <div class="grid">
+  <div class="card tier"><h3>Lead Catcher</h3><div class="price">ابتداءً من $490</div><small>إعداد · ثم من $99 شهريًا</small>
+   <ul><li>صفحة هبوط مع نموذج استفسار</li><li>رد تلقائي فوري</li><li>نظام إدارة العملاء المحتملين</li><li>متابعة من خطوتين</li></ul><a class="btn line" href="#audit">ابدأ من هنا</a></div>
+  <div class="card tier pop"><h3>Booking Machine</h3><div class="price">ابتداءً من $890</div><small>إعداد · ثم من $149 شهريًا</small>
+   <ul><li>كل ما في Lead Catcher</li><li>الحجز الإلكتروني + التقويم</li><li>التذكيرات &amp; تقليل حالات عدم الحضور</li><li>طلبات التقييم &amp; إعادة الحجز</li></ul><a class="btn" href="#audit">الأكثر طلبًا</a></div>
+  <div class="card tier"><h3>AI Front Desk</h3><div class="price">ابتداءً من $1,490</div><small>إعداد · ثم من $249 شهريًا</small>
+   <ul><li>كل ما في Booking Machine</li><li>مساعد ذكي بالذكاء الاصطناعي لدردشة موقعك</li><li>تقييم العملاء المحتملين &amp; تحويلهم إليك</li><li>تقرير شهري</li></ul><a class="btn line" href="#audit">تواصل معنا</a></div>
+ </div>
+ <p class="lead" style="margin-top:18px">تغطي الرسوم الشهرية الاستضافة والمراقبة والإصلاحات، إلى جانب ما يصل إلى ساعة واحدة من التعديلات البسيطة شهريًا. تواصل معنا في أي وقت عبر WhatsApp أو البريد الإلكتروني. يمكنك الإلغاء شهريًا، وتحتفظ بكل ما بنيناه لك.</p>
+</div></section>
+
+<section class="soft" id="audit"><div class="wrap">
+ <h2>فحص مجاني للأتمتة، عبر الدردشة أو البريد الإلكتروني</h2>
+ <p class="lead">أخبرنا كيف تصلك الاستفسارات اليوم. سنوضح لك أين تضيع فرص العملاء المحتملين وما الذي سنؤتمته أولًا. لا حاجة لمكالمة، ولا التزام. نرد خلال بضع ساعات (توقيت تايلاند، GMT+7).</p>
+ <div class="contact">
+  <a class="btn wa" href="https://wa.me/66650576517?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20Loopwise%D8%8C%20%D8%A3%D9%88%D8%AF%D9%91%20%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D9%81%D8%AD%D8%B5%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%20%D9%84%D9%84%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D9%84%D8%B9%D9%85%D9%84%D9%8A." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn line" href="mailto:hello.loopwise@outlook.com?subject=%D9%81%D8%AD%D8%B5%20%D8%A7%D9%84%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%86%D9%8A">البريد الإلكتروني</a>
+ </div>
+ <p class="lead" style="margin-top:22px">أو استخدم النموذج وسنرد عليك عبر البريد الإلكتروني:</p>
+ <form id="f">
+  <div><label for="n">الاسم</label><input id="n" name="name" required></div>
+  <div><label for="e">البريد الإلكتروني</label><input id="e" name="email" type="email" required></div>
+  <div><label for="b">النشاط التجاري &amp; الموقع الإلكتروني</label><input id="b" name="business" required></div>
+  <div><label for="t">نوع النشاط التجاري</label><select id="t" name="type"><option value="Car detailing">العناية الدقيقة بالسيارات</option><option value="Cleaning">خدمات التنظيف</option><option value="Trades / home services">الحرف / خدمات المنازل</option><option value="Beauty / wellness">التجميل / العافية</option><option value="Other">أخرى</option></select></div>
+  <div><label for="v">الاستفسارات أسبوعيًا (تقريبًا)</label><select id="v" name="volume"><option value="Under 5">أقل من 5</option><option value="5–20">5–20</option><option value="20–50">20–50</option><option value="50+">50+</option></select></div>
+  <div><label for="m">أكبر تحدٍ يواجهك حاليًا</label><textarea id="m" name="message" rows="3"></textarea></div>
+  <label style="font-weight:400"><input type="checkbox" required style="width:auto"> أوافق على استخدام بياناتي للرد على طلبي (راجع <a href="../privacy.html">الخصوصية</a>).</label>
+  <button class="btn" type="submit">اطلب فحصي المجاني</button>
+  <div class="ok" id="ok">شكرًا لك! ستصلك رسالة رد عبر البريد الإلكتروني قريبًا.</div>
+ </form>
+</div></section>
+
+<footer><div class="wrap">© <span id="y"></span> Loopwise · <a href="mailto:hello.loopwise@outlook.com">hello.loopwise@outlook.com</a> · <a href="../imprint.html">بيانات الناشر</a> · <a href="../privacy.html">الخصوصية</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+// Set to the n8n production webhook URL once the lead workflow is live.
+const T_OK="شكرًا لك! ستصلك رسالة رد عبر البريد الإلكتروني قريبًا.";
+const T_ERR="عذرًا، لم يكتمل الإرسال. يرجى المحاولة مرة أخرى أو مراسلتنا عبر hello.loopwise@outlook.com.";
+const LEAD_WEBHOOK='https://xsvenn.app.n8n.cloud/webhook/loopwise-lead';
+document.getElementById('f').addEventListener('submit',async e=>{
+ e.preventDefault();const btn=e.target.querySelector('button'),ok=document.getElementById('ok');
+ const data=Object.fromEntries(new FormData(e.target));data.source='agency-website';data.lang=document.documentElement.lang;btn.disabled=true;
+ try{const r=await fetch(LEAD_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok)throw 0;
+  ok.textContent=T_OK;}
+ catch(err){btn.disabled=false;ok.textContent=T_ERR;}
+ ok.style.display='block';
+});
+</script>
+</body>
+</html>

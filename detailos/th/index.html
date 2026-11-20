@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile Detailing Business OS – บริหารธุรกิจดีเทลลิ่งรถด้วยสเปรดชีตเดียว</title>
+<meta name="description" content="เครื่องคำนวณราคา CRM ลูกค้า ปฏิทินนัดหมาย บันทึกรายรับรายจ่าย ใบแจ้งหนี้ ข้อความสำเร็จรูป และเช็กลิสต์ สำหรับธุรกิจดีเทลลิ่งรถนอกสถานที่ ใช้ได้กับ Excel และ Google Sheets ดาวน์โหลดได้ทันที">
+<style>
+:root{--navy:#0f1e33;--accent:#1fa3c7;--accent2:#14839f;--bg:#ffffff;--soft:#f3f8fb;--text:#1b2633;--muted:#5a6b7d;--line:#dde6ee}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.55}
+a{color:var(--accent2)}.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);color:#fff}nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-weight:800;letter-spacing:.3px}.logo span{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0 64px}
+h1{font-size:clamp(28px,4.5vw,46px);line-height:1.12;margin:0 0 16px}.hero p{color:#c9d6e3;font-size:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:10px;border:0;cursor:pointer}
+.btn:hover{background:var(--accent2)}.btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.hero .note{font-size:14px;color:#9fb3c8;margin-top:12px}
+.mock{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
+section{padding:64px 0}section.soft{background:var(--soft)}h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}.lead{color:var(--muted);max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted)}
+.pain li{margin:8px 0}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.tier{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.tier.best{border:2px solid var(--accent);position:relative}.tier.best:before{content:"Best value";position:absolute;top:-12px;left:20px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px}
+.price{font-size:36px;font-weight:800;margin:6px 0}.tier ul{padding-left:18px;color:var(--muted);flex:1;font-size:15px}.tier .btn{text-align:center}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}summary{font-weight:700;cursor:pointer}
+footer{background:var(--navy);color:#9fb3c8;padding:28px 0;font-size:14px}footer a{color:#c9d6e3}
+@media (max-width:860px){.hero,.grid{grid-template-columns:1fr}.prices{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.prices{grid-template-columns:1fr}}
+.langs{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}.langs a{color:inherit;opacity:.7;text-decoration:none;padding:2px 6px;border-radius:6px}.langs a[aria-current]{opacity:1;font-weight:700;outline:1px solid currentColor}@media (max-width:600px){nav{flex-wrap:wrap;row-gap:10px}.langs{order:3;width:100%}}
+</style>
+<link rel="alternate" hreflang="en" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+<link rel="alternate" hreflang="es" href="https://xsvenn.github.io/loopwise-sites/detailos/es/">
+<link rel="alternate" hreflang="fr" href="https://xsvenn.github.io/loopwise-sites/detailos/fr/">
+<link rel="alternate" hreflang="pt" href="https://xsvenn.github.io/loopwise-sites/detailos/pt/">
+<link rel="alternate" hreflang="th" href="https://xsvenn.github.io/loopwise-sites/detailos/th/">
+<link rel="alternate" hreflang="ru" href="https://xsvenn.github.io/loopwise-sites/detailos/ru/">
+<link rel="alternate" hreflang="uk" href="https://xsvenn.github.io/loopwise-sites/detailos/uk/">
+<link rel="alternate" hreflang="ar" href="https://xsvenn.github.io/loopwise-sites/detailos/ar/">
+<link rel="alternate" hreflang="zh" href="https://xsvenn.github.io/loopwise-sites/detailos/zh/">
+<link rel="alternate" hreflang="hi" href="https://xsvenn.github.io/loopwise-sites/detailos/hi/">
+<link rel="alternate" hreflang="x-default" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav><div class="logo">Detail<span>OS</span></div><div class="langs"><a href="../" hreflang="en" lang="en">EN</a><a href="../es/" hreflang="es" lang="es">ES</a><a href="../fr/" hreflang="fr" lang="fr">FR</a><a href="../pt/" hreflang="pt" lang="pt">PT</a><a href="../th/" hreflang="th" lang="th" aria-current="page">ไทย</a><a href="../ru/" hreflang="ru" lang="ru">RU</a><a href="../uk/" hreflang="uk" lang="uk">UA</a><a href="../ar/" hreflang="ar" lang="ar">عربي</a><a href="../zh/" hreflang="zh" lang="zh">中文</a><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></div><a class="btn ghost" href="#pricing">ซื้อเลย</a></nav>
+  <div class="hero">
+   <div>
+    <h1>บริหารธุรกิจดีเทลลิ่งรถนอกสถานที่ด้วยสเปรดชีตเดียว</h1>
+    <p>ตั้งราคาทุกบริการให้มีกำไร เก็บข้อมูลลูกค้าและรถทุกคัน เติมปฏิทินด้วยลูกค้าที่กลับมาซ้ำ และดูกำไรจริงทุกเดือน โดยไม่ต้องจ่ายค่าซอฟต์แวร์</p>
+    <a class="btn" href="#pricing">ดูแพ็กเกจ</a>
+    <div class="note">Excel และ Google Sheets · ดาวน์โหลดทันที · จ่ายครั้งเดียว ไม่มีรายเดือน</div>
+   </div>
+   <img class="mock" src="../img/mockup-dashboard.svg" alt="ตัวอย่างแดชบอร์ด Business OS แสดงรายรับ รายจ่าย และกำไรรายเดือน">
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <h2>คุ้น ๆ ไหม?</h2>
+  <ul class="pain lead">
+   <li>คุณยุ่งทุกสุดสัปดาห์ แต่สิ้นเดือนกลับไม่แน่ใจว่าได้เงินจริงเท่าไร</li>
+   <li>ตั้งราคาแบบเดา รถ SUV คันใหญ่และภายในที่มีขนสุนัขกินเวลาคุณมากกว่า แต่ได้เงินเท่าเดิม</li>
+   <li>ข้อมูลลูกค้ากระจายอยู่ในมือถือ แชท Instagram และโน้ต และคุณลืมนัดลูกค้ากลับมาใหม่</li>
+   <li>ใบแจ้งหนี้ ใบเสนอราคา และการตอบแชท กินเวลาตอนเย็นของคุณ</li>
+  </ul>
+ </div>
+</section>
+
+<section class="soft">
+ <div class="wrap">
+  <h2>ทุกอย่างที่ธุรกิจดีเทลลิ่งนอกสถานที่ต้องมี</h2>
+  <p class="lead">ไฟล์เดียวที่เชื่อมกันทั้งหมด กรอกครั้งเดียว ข้อมูลไหลไปยังราคา ใบแจ้งหนี้ ประวัติลูกค้า และแดชบอร์ด</p>
+  <div class="grid">
+   <div class="card"><h3>เครื่องคำนวณราคาและกำไร</h3><p>กรอกชั่วโมง ค่าน้ำยา และค่าเดินทาง แล้วรับราคาแนะนำตามกำไรที่ตั้งไว้ พร้อมกำไรต่อชั่วโมง</p></div>
+   <div class="card"><h3>CRM ลูกค้า</h3><p>ข้อมูลติดต่อ ช่องทางที่มา การยินยอม จำนวนครั้ง ยอดใช้จ่าย และวันที่ "ถึงเวลานัดใหม่" อัตโนมัติ</p></div>
+   <div class="card"><h3>ข้อมูลรถ</h3><p>ยี่ห้อ ขนาดรถ สภาพสี วันเคลือบเซรามิก และบันทึกของรถแต่ละคัน</p></div>
+   <div class="card"><h3>ปฏิทินนัดหมาย</h3><p>นัดหมาย มัดจำ สถานะ และการแจ้งเตือน ในรายการเดียว</p></div>
+   <div class="card"><h3>รายรับและรายจ่าย</h3><p>บันทึกงานพร้อมคำนวณภาษี แยกหมวดรายจ่าย และติดตามใบแจ้งหนี้ที่ยังไม่จ่าย</p></div>
+   <div class="card"><h3>แดชบอร์ดรายเดือน</h3><p>รายรับ ต้นทุน กำไร จำนวนงาน ยอดเฉลี่ยต่องาน และกำไรต่อชั่วโมง พร้อมกราฟ</p></div>
+   <div class="card"><h3>ใบแจ้งหนี้และรายการราคา</h3><p>ใบแจ้งหนี้พร้อมพิมพ์และรายการราคาสำหรับลูกค้า สร้างจากตัวเลขของคุณเอง</p></div>
+   <div class="card"><h3>ข้อความสำเร็จรูป 13 แบบ</h3><p>ตอบคำถาม ใบเสนอราคา แจ้งเตือน ขอรีวิว แนะนำเพื่อน นัดใหม่ และรับมือคำร้องเรียน</p></div>
+   <div class="card"><h3>คู่มือ เช็กลิสต์ การตลาด</h3><p>คู่มือเริ่มต้น เช็กลิสต์การทำงาน แม่แบบเงื่อนไขบริการ และไอเดียโพสต์ 30 วัน</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <img class="mock" style="max-width:720px;display:block;margin:0 auto" src="../img/mockup-bundle.svg" alt="สิ่งที่อยู่ใน Complete Bundle: ไฟล์ Excel คู่มือ ข้อความสำเร็จรูป เช็กลิสต์ และชุดการตลาด">
+ </div>
+</section>
+
+<section class="soft" id="pricing">
+ <div class="wrap">
+  <h2>เลือกแพ็กเกจของคุณ</h2>
+  <p class="lead">จ่ายครั้งเดียว ราคาเป็น USD อาจมีภาษีท้องถิ่นเพิ่มตอนชำระเงิน</p>
+  <p class="lead"><strong>หมายเหตุ: ไฟล์ทั้งหมดเป็นภาษาอังกฤษ</strong></p>
+  <div class="prices">
+   <div class="tier"><h3>Starter</h3><div class="price">$9</div>
+    <ul><li>เครื่องคำนวณราคาและกำไร</li><li>รายการราคาสำหรับลูกค้า</li><li>แม่แบบใบแจ้งหนี้</li><li>เช็กลิสต์การทำงาน</li><li>แม่แบบเงื่อนไขบริการ</li></ul>
+    <a class="btn" href="#" data-tier="starter">ซื้อ Starter</a></div>
+   <div class="tier"><h3>Professional</h3><div class="price">$19</div>
+    <ul><li>ไฟล์ Business OS ฉบับเต็ม (11 แท็บ)</li><li>CRM รถ และการจอง</li><li>รายรับ รายจ่าย แดชบอร์ด</li><li>ข้อความถึงลูกค้า 13 แบบ</li><li>เช็กลิสต์และเงื่อนไข</li></ul>
+    <a class="btn" href="#" data-tier="professional">ซื้อ Professional</a></div>
+   <div class="tier"><h3>Business</h3><div class="price">$29</div>
+    <ul><li>ทุกอย่างใน Professional</li><li>คู่มือเริ่มธุรกิจ: การตั้งราคา อุปกรณ์ ลูกค้า 10 รายแรก และแพ็กเกจรายเดือน</li></ul>
+    <a class="btn" href="#" data-tier="business">ซื้อ Business</a></div>
+   <div class="tier best"><h3>Complete Bundle</h3><div class="price">$39</div>
+    <ul><li>ทุกอย่างข้างต้น</li><li>ชุดการตลาดและโซเชียลมีเดีย</li><li>เช็กลิสต์ Google Business Profile</li><li>แม่แบบใบปลิวและการหาพาร์ทเนอร์</li><li>อัปเดตในอนาคตฟรี</li></ul>
+    <a class="btn" href="#" data-tier="bundle">ซื้อ Bundle</a></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>FAQ</h2>
+  <details><summary>ต้องมีอะไรบ้างถึงจะใช้ได้?</summary><p>Microsoft Excel 2019 ขึ้นไป / Microsoft 365 หรือบัญชี Google ฟรีสำหรับ Google Sheets ไฟล์ Word เปิดได้ใน Word, Google Docs หรือ LibreOffice</p></details>
+  <details><summary>จะได้รับไฟล์อย่างไร?</summary><p>หลังชำระเงิน คุณจะได้ลิงก์ดาวน์โหลดบนหน้าจอและทางอีเมลทันที</p></details>
+  <details><summary>เป็นแบบรายเดือนไหม?</summary><p>ไม่ใช่ จ่ายครั้งเดียวแล้วเก็บไฟล์ไว้ใช้ได้ตลอด</p></details>
+  <details><summary>ใช้นอกสหรัฐฯ ได้ไหม?</summary><p>ได้ คุณตั้งสัญลักษณ์สกุลเงินและอัตราภาษี/VAT เองได้ ระยะทางใช้ได้ทั้งกิโลเมตรและไมล์</p></details>
+  <details><summary>ปรับแต่งได้ไหม?</summary><p>ได้ เปลี่ยนชื่อบริการ แก้ราคา ใส่โลโก้ของคุณได้ ชีตไม่ได้ล็อกไว้</p></details>
+  <details><summary>นี่คือคำแนะนำด้านภาษีหรือกฎหมายไหม?</summary><p>ไม่ใช่ เครื่องมือนี้ช่วยจัดระเบียบตัวเลขของคุณ กรุณาตรวจสอบข้อกำหนดด้านภาษีและกฎหมายในประเทศของคุณกับผู้เชี่ยวชาญ</p></details>
+  <details><summary>ถ้ามีปัญหากับไฟล์ทำอย่างไร?</summary><p>ทักเราทาง <a href="https://wa.me/66650576517?text=%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B5%20%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%20DetailOS" target="_blank" rel="noopener">WhatsApp</a> หรืออีเมลมาที่ hello.loopwise+detailos@outlook.com แล้วเราจะช่วยแก้ไข หากไฟล์มีปัญหาและเราแก้ไม่ได้ คุณจะได้รับเงินคืน</p></details>
+ </div>
+</section>
+
+<section class="soft" id="support">
+ <div class="wrap">
+  <h2>ฝ่ายช่วยเหลือ</h2>
+  <p class="lead">มีคำถามเรื่องการซื้อ การดาวน์โหลด หรือการใช้ไฟล์? เขียนถึงเราเป็นภาษาของคุณได้เลย เราจะตอบทางอีเมล ปกติภายในไม่กี่ชั่วโมง</p>
+  <form id="sf" style="display:grid;gap:12px;max-width:560px;margin-top:18px">
+   <input name="email" type="email" required placeholder="อีเมลของคุณ (ที่ใช้สั่งซื้อ)" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <input name="subject" required placeholder="หัวข้อ" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <textarea name="message" rows="4" required placeholder="ให้เราช่วยอะไรดี?" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px"></textarea>
+   <button class="btn" type="submit">ส่งข้อความ</button>
+   <div id="sok" style="display:none;background:#e5f6fb;padding:12px;border-radius:10px"></div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  © <span id="y"></span> DetailOS · <a href="https://wa.me/66650576517" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:hello.loopwise+detailos@outlook.com">hello.loopwise+detailos@outlook.com</a> · <a href="../imprint.html">ข้อมูลผู้ให้บริการ</a> · <a href="../privacy.html">ความเป็นส่วนตัว</a> · <a href="../terms.html">เงื่อนไขและการคืนเงิน</a>
+ </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();
+// TODO: replace href="#" on [data-tier] buttons with Payhip product links once the store exists.</script>
+<script>
+const S_OK="ขอบคุณ! เราได้รับข้อความแล้ว และจะตอบกลับทางอีเมล";
+const S_ERR="ส่งไม่สำเร็จ กรุณาอีเมลมาที่ hello.loopwise+detailos@outlook.com";
+document.getElementById('sf').addEventListener('submit',async e=>{
+ e.preventDefault();const b=e.target.querySelector('button'),o=document.getElementById('sok');b.disabled=true;
+ const d=Object.fromEntries(new FormData(e.target));d.site='shop';d.lang=document.documentElement.lang;
+ try{const r=await fetch('https://xsvenn.app.n8n.cloud/webhook/loopwise-support',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});if(!r.ok)throw 0;o.textContent=S_OK;e.target.reset();}
+ catch(err){b.disabled=false;o.textContent=S_ERR;}
+ o.style.display='block';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loopwise – 让咨询变成预约订单的自动化服务</title>
+<meta name="description" content="为汽车美容师和本地服务企业提供线索收集、即时回复、预约、提醒、评价请求及AI助手。价格固定，数日即可上线。">
+<style>
+:root{--ink:#14161f;--violet:#5b4bff;--violet2:#4335e0;--mint:#14b88a;--soft:#f5f4ff;--muted:#5d6275;--line:#e3e2f0}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);line-height:1.55;background:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}a{color:var(--violet2)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}.logo{font-weight:800;font-size:20px}.logo b{color:var(--violet)}
+.btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:10px;border:0;cursor:pointer;font-size:16px}.btn:hover{background:var(--violet2)}
+.btn.line{background:#fff;color:var(--violet);border:2px solid var(--violet)}
+.hero{padding:40px 0 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+h1{font-size:clamp(28px,4.6vw,48px);line-height:1.1;margin:0 0 16px}.hero p{font-size:18px;color:var(--muted)}
+.flow{background:var(--soft);border-radius:18px;padding:22px}.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;display:flex;gap:10px;align-items:center;font-size:15px}
+.step i{font-style:normal;background:var(--violet);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:13px;flex:none}
+section{padding:64px 0}.soft{background:var(--soft)}h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 10px}.lead{color:var(--muted);max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted)}
+.tier{display:flex;flex-direction:column}.tier .price{font-size:30px;font-weight:800;margin:6px 0 2px}.tier small{color:var(--muted)}.tier ul{padding-left:18px;color:var(--muted);flex:1}
+.contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.btn.wa{background:#1fa855}.btn.wa:hover{background:#178a45}
+.tier.pop{border:2px solid var(--violet)}
+form{display:grid;gap:12px;max-width:560px;margin-top:22px}input,select,textarea{font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;width:100%}
+label{font-weight:600;font-size:14px}.ok{display:none;background:#e5f8f1;color:#0c6b50;padding:14px;border-radius:10px}
+footer{background:var(--ink);color:#a9adbf;padding:28px 0;font-size:14px}footer a{color:#d6d8e4}
+@media (max-width:860px){.hero,.grid{grid-template-columns:1fr}}
+.langs{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}.langs a{color:inherit;opacity:.7;text-decoration:none;padding:2px 6px;border-radius:6px}.langs a[aria-current]{opacity:1;font-weight:700;outline:1px solid currentColor}@media (max-width:600px){nav{flex-wrap:wrap;row-gap:10px}.langs{order:3;width:100%}}
+</style>
+<link rel="alternate" hreflang="en" href="https://xsvenn.github.io/loopwise-sites/">
+<link rel="alternate" hreflang="es" href="https://xsvenn.github.io/loopwise-sites/es/">
+<link rel="alternate" hreflang="fr" href="https://xsvenn.github.io/loopwise-sites/fr/">
+<link rel="alternate" hreflang="pt" href="https://xsvenn.github.io/loopwise-sites/pt/">
+<link rel="alternate" hreflang="th" href="https://xsvenn.github.io/loopwise-sites/th/">
+<link rel="alternate" hreflang="ru" href="https://xsvenn.github.io/loopwise-sites/ru/">
+<link rel="alternate" hreflang="uk" href="https://xsvenn.github.io/loopwise-sites/uk/">
+<link rel="alternate" hreflang="ar" href="https://xsvenn.github.io/loopwise-sites/ar/">
+<link rel="alternate" hreflang="zh" href="https://xsvenn.github.io/loopwise-sites/zh/">
+<link rel="alternate" hreflang="hi" href="https://xsvenn.github.io/loopwise-sites/hi/">
+<link rel="alternate" hreflang="x-default" href="https://xsvenn.github.io/loopwise-sites/">
+</head>
+<body>
+<div class="wrap"><nav><div class="logo">Loop<b>wise</b></div><div class="langs"><a href="../" hreflang="en" lang="en">EN</a><a href="../es/" hreflang="es" lang="es">ES</a><a href="../fr/" hreflang="fr" lang="fr">FR</a><a href="../pt/" hreflang="pt" lang="pt">PT</a><a href="../th/" hreflang="th" lang="th">ไทย</a><a href="../ru/" hreflang="ru" lang="ru">RU</a><a href="../uk/" hreflang="uk" lang="uk">UA</a><a href="../ar/" hreflang="ar" lang="ar">عربي</a><a href="../zh/" hreflang="zh" lang="zh" aria-current="page">中文</a><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></div><a class="btn line" href="#audit">免费检测</a></nav></div>
+
+<div class="wrap hero">
+ <div>
+  <h1>别再因回复太慢而流失订单！</h1>
+  <p>我们专为汽车美容师和本地服务企业打造自动化系统。每一条咨询都能即时获得回复、完成预约并收到提醒，还能在您忙于工作时转化为好评和回头客。</p>
+  <a class="btn" href="#audit">免费获取自动化检测</a>
+ </div>
+ <div class="flow" aria-label="自动化示例">
+  <div class="step"><i>1</i>客户填写您的表单，或在晚上9点给您留言</div>
+  <div class="step"><i>2</i>即时回复，附上价格和可预约时段</div>
+  <div class="step"><i>3</i>线索自动存入您的CRM，并标记为高、中、低意向</div>
+  <div class="step"><i>4</i>预约确认，并在前一天发送提醒</div>
+  <div class="step"><i>5</i>服务完成后发送评价请求，8周后推送再次预约优惠</div>
+ </div>
+</div>
+
+<section class="soft"><div class="wrap">
+ <h2>我们的服务内容</h2>
+ <p class="lead">小而精的系统，每个只专注一项核心任务。基于成熟工具搭建，附带完整文档并交付给您。</p>
+ <div class="grid">
+  <div class="card"><h3>线索收集</h3><p>落地页或网站表单，精准收集报价所需的全部信息。</p></div>
+  <div class="card"><h3>即时回复</h3><p>无论白天还是深夜，一分钟内即可收到如同真人般贴心的回复。</p></div>
+  <div class="card"><h3>简易CRM</h3><p>所有线索和客户集中管理，清晰显示状态、价值和下一步行动。</p></div>
+  <div class="card"><h3>预约与提醒</h3><p>在线预约与您的日历同步，并自动发送提醒。</p></div>
+  <div class="card"><h3>评价与复购</h3><p>在最佳时机发送评价请求，并通过复购优惠让客户再次光临。</p></div>
+  <div class="card"><h3>AI助手</h3><p>基于您自己的价目表和常见问题解答客户疑问，遇到不明确的问题则转交给您。</p></div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <h2>服务套餐</h2>
+ <p class="lead">明码标价，起价清晰。免费检测后将提供您的精确报价。第三方工具费用（如有）直接支付给服务商。</p>
+ <div class="grid">
+  <div class="card tier"><h3>Lead Catcher</h3><div class="price">起价 $490</div><small>设置费 · 之后起价 $99/月</small>
+   <ul><li>带咨询表单的落地页</li><li>即时自动回复</li><li>线索CRM</li><li>两步跟进</li></ul><a class="btn line" href="#audit">从这里开始</a></div>
+  <div class="card tier pop"><h3>Booking Machine</h3><div class="price">起价 $890</div><small>设置费 · 之后起价 $149/月</small>
+   <ul><li>包含 Lead Catcher 的全部功能</li><li>在线预约 + 日历</li><li>提醒功能 &amp; 减少爽约</li><li>评价邀请 &amp; 复购提醒</li></ul><a class="btn" href="#audit">最受欢迎</a></div>
+  <div class="card tier"><h3>AI Front Desk</h3><div class="price">起价 $1,490</div><small>设置费 · 之后起价 $249/月</small>
+   <ul><li>包含 Booking Machine 的全部功能</li><li>用于网站聊天的 AI 助手</li><li>线索评分 &amp; 转交给您</li><li>月度报告</li></ul><a class="btn line" href="#audit">联系我们</a></div>
+ </div>
+ <p class="lead" style="margin-top:18px">月费涵盖托管、监控、故障修复，以及每月最多 1 小时的小幅调整。您可随时通过 WhatsApp 或电子邮件联系我们。可按月取消，您依然保留我们为您打造的一切。</p>
+</div></section>
+
+<section class="soft" id="audit"><div class="wrap">
+ <h2>免费自动化检测，通过聊天或邮件获取</h2>
+ <p class="lead">请告诉我们您目前如何接收咨询，我们将为您分析潜在客户在哪些环节流失，以及我们会优先自动化哪些环节。无需通话，也没有任何义务。我们将在几小时内回复（泰国时间，GMT+7）。</p>
+ <div class="contact">
+  <a class="btn wa" href="https://wa.me/66650576517?text=%E6%82%A8%E5%A5%BD%20Loopwise%EF%BC%8C%E6%88%91%E6%83%B3%E4%B8%BA%E6%88%91%E7%9A%84%E4%BC%81%E4%B8%9A%E7%94%B3%E8%AF%B7%E4%B8%80%E6%AC%A1%E5%85%8D%E8%B4%B9%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A3%80%E6%B5%8B%E3%80%82" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn line" href="mailto:hello.loopwise@outlook.com?subject=%E5%85%8D%E8%B4%B9%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A3%80%E6%B5%8B">电子邮件</a>
+ </div>
+ <p class="lead" style="margin-top:22px">或使用下方表单，我们将通过电子邮件回复您：</p>
+ <form id="f">
+  <div><label for="n">姓名</label><input id="n" name="name" required></div>
+  <div><label for="e">电子邮件</label><input id="e" name="email" type="email" required></div>
+  <div><label for="b">企业与网站</label><input id="b" name="business" required></div>
+  <div><label for="t">业务类型</label><select id="t" name="type"><option value="Car detailing">汽车美容</option><option value="Cleaning">清洁服务</option><option value="Trades / home services">装修及上门服务</option><option value="Beauty / wellness">美容 / 健康养生</option><option value="Other">其他</option></select></div>
+  <div><label for="v">每周咨询量（大约）</label><select id="v" name="volume"><option value="Under 5">少于 5 次</option><option value="5–20">5–20</option><option value="20–50">20–50</option><option value="50+">50+</option></select></div>
+  <div><label for="m">当前最大的问题</label><textarea id="m" name="message" rows="3"></textarea></div>
+  <label style="font-weight:400"><input type="checkbox" required style="width:auto"> 我同意将我的信息用于回复我的请求（参见<a href="../privacy.html">隐私政策</a>）。</label>
+  <button class="btn" type="submit">申请免费检测</button>
+  <div class="ok" id="ok">谢谢！我们很快会通过电子邮件回复您。</div>
+ </form>
+</div></section>
+
+<footer><div class="wrap">© <span id="y"></span> Loopwise · <a href="mailto:hello.loopwise@outlook.com">hello.loopwise@outlook.com</a> · <a href="../imprint.html">法律声明</a> · <a href="../privacy.html">隐私政策</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+// Set to the n8n production webhook URL once the lead workflow is live.
+const T_OK="谢谢！我们很快会通过电子邮件回复您。";
+const T_ERR="抱歉，提交未成功。请重试，或发送邮件至 hello.loopwise@outlook.com。";
+const LEAD_WEBHOOK='https://xsvenn.app.n8n.cloud/webhook/loopwise-lead';
+document.getElementById('f').addEventListener('submit',async e=>{
+ e.preventDefault();const btn=e.target.querySelector('button'),ok=document.getElementById('ok');
+ const data=Object.fromEntries(new FormData(e.target));data.source='agency-website';data.lang=document.documentElement.lang;btn.disabled=true;
+ try{const r=await fetch(LEAD_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok)throw 0;
+  ok.textContent=T_OK;}
+ catch(err){btn.disabled=false;ok.textContent=T_ERR;}
+ ok.style.display='block';
+});
+</script>
+</body>
+</html>

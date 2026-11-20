@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бизнес-ОС для мобильного детейлинга – Управляйте детейлинг-бизнесом из одной таблицы</title>
+<meta name="description" content="Калькулятор цен, CRM для клиентов, календарь записей, учёт доходов и расходов, счета, скрипты и чек-листы для мобильных детейлеров. Excel &amp; Google Sheets. Мгновенная загрузка.">
+<style>
+:root{--navy:#0f1e33;--accent:#1fa3c7;--accent2:#14839f;--bg:#ffffff;--soft:#f3f8fb;--text:#1b2633;--muted:#5a6b7d;--line:#dde6ee}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.55}
+a{color:var(--accent2)}.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);color:#fff}nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-weight:800;letter-spacing:.3px}.logo span{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0 64px}
+h1{font-size:clamp(28px,4.5vw,46px);line-height:1.12;margin:0 0 16px}.hero p{color:#c9d6e3;font-size:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:10px;border:0;cursor:pointer}
+.btn:hover{background:var(--accent2)}.btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.hero .note{font-size:14px;color:#9fb3c8;margin-top:12px}
+.mock{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
+section{padding:64px 0}section.soft{background:var(--soft)}h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}.lead{color:var(--muted);max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted)}
+.pain li{margin:8px 0}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.tier{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.tier.best{border:2px solid var(--accent);position:relative}.tier.best:before{content:"Best value";position:absolute;top:-12px;left:20px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px}
+.price{font-size:36px;font-weight:800;margin:6px 0}.tier ul{padding-left:18px;color:var(--muted);flex:1;font-size:15px}.tier .btn{text-align:center}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}summary{font-weight:700;cursor:pointer}
+footer{background:var(--navy);color:#9fb3c8;padding:28px 0;font-size:14px}footer a{color:#c9d6e3}
+@media (max-width:860px){.hero,.grid{grid-template-columns:1fr}.prices{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.prices{grid-template-columns:1fr}}
+.langs{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}.langs a{color:inherit;opacity:.7;text-decoration:none;padding:2px 6px;border-radius:6px}.langs a[aria-current]{opacity:1;font-weight:700;outline:1px solid currentColor}@media (max-width:600px){nav{flex-wrap:wrap;row-gap:10px}.langs{order:3;width:100%}}
+</style>
+<link rel="alternate" hreflang="en" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+<link rel="alternate" hreflang="es" href="https://xsvenn.github.io/loopwise-sites/detailos/es/">
+<link rel="alternate" hreflang="fr" href="https://xsvenn.github.io/loopwise-sites/detailos/fr/">
+<link rel="alternate" hreflang="pt" href="https://xsvenn.github.io/loopwise-sites/detailos/pt/">
+<link rel="alternate" hreflang="th" href="https://xsvenn.github.io/loopwise-sites/detailos/th/">
+<link rel="alternate" hreflang="ru" href="https://xsvenn.github.io/loopwise-sites/detailos/ru/">
+<link rel="alternate" hreflang="uk" href="https://xsvenn.github.io/loopwise-sites/detailos/uk/">
+<link rel="alternate" hreflang="ar" href="https://xsvenn.github.io/loopwise-sites/detailos/ar/">
+<link rel="alternate" hreflang="zh" href="https://xsvenn.github.io/loopwise-sites/detailos/zh/">
+<link rel="alternate" hreflang="hi" href="https://xsvenn.github.io/loopwise-sites/detailos/hi/">
+<link rel="alternate" hreflang="x-default" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav><div class="logo">Detail<span>OS</span></div><div class="langs"><a href="../" hreflang="en" lang="en">EN</a><a href="../es/" hreflang="es" lang="es">ES</a><a href="../fr/" hreflang="fr" lang="fr">FR</a><a href="../pt/" hreflang="pt" lang="pt">PT</a><a href="../th/" hreflang="th" lang="th">ไทย</a><a href="../ru/" hreflang="ru" lang="ru" aria-current="page">RU</a><a href="../uk/" hreflang="uk" lang="uk">UA</a><a href="../ar/" hreflang="ar" lang="ar">عربي</a><a href="../zh/" hreflang="zh" lang="zh">中文</a><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></div><a class="btn ghost" href="#pricing">Получить</a></nav>
+  <div class="hero">
+   <div>
+    <h1>Управляйте мобильным детейлингом из одной таблицы.</h1>
+    <p>Рассчитывайте прибыльную стоимость каждой услуги, храните данные о каждом клиенте и автомобиле, заполняйте календарь повторными записями и видьте реальную прибыль за каждый месяц без оплаты за софт.</p>
+    <a class="btn" href="#pricing">Смотреть пакеты</a>
+    <div class="note">Excel &amp; Google Sheets · Мгновенная загрузка · Разовый платёж, без подписки</div>
+   </div>
+   <img class="mock" src="../img/mockup-dashboard.svg" alt="Превью панели Business OS с ежемесячными доходами, расходами и прибылью">
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <h2>Знакомая ситуация?</h2>
+  <ul class="pain lead">
+   <li>Вы заняты каждые выходные, но в конце месяца не уверены, сколько действительно заработали.</li>
+   <li>Цены назначаются на глаз. Большие внедорожники и салоны с шерстью собак отнимают время за ту же оплату.</li>
+   <li>Клиенты разбросаны по телефону, директ-сообщениям в Instagram и заметкам, а повторные записи теряются.</li>
+   <li>Счета, коммерческие предложения и ответы забирают ваши вечера.</li>
+  </ul>
+ </div>
+</section>
+
+<section class="soft">
+ <div class="wrap">
+  <h2>Всё, что нужно мобильному детейлеру</h2>
+  <p class="lead">Одна связанная книга: то, что вы вводите однажды, попадает в цены, счета, историю клиентов и панель.</p>
+  <div class="grid">
+   <div class="card"><h3>Калькулятор цен и прибыли</h3><p>Введите часы, материалы и дорогу. Получите рекомендованную цену при целевой марже и прибыль в час.</p></div>
+   <div class="card"><h3>CRM клиентов</h3><p>Контакт, источник, согласие, визиты, общая сумма и автоматическая дата «пора записать повторно».</p></div>
+   <div class="card"><h3>Карточки автомобилей</h3><p>Марка, класс размера, состояние ЛКП, даты керамического покрытия и заметки по каждому авто.</p></div>
+   <div class="card"><h3>Календарь записей</h3><p>Записи, предоплаты, статусы и напоминания в одном списке.</p></div>
+   <div class="card"><h3>Доходы и расходы</h3><p>Журнал работ с расчётом налога, категоризированные расходы и учёт неоплаченных счетов.</p></div>
+   <div class="card"><h3>Ежемесячная панель</h3><p>Доходы, затраты, прибыль, количество работ, средний чек и прибыль в час с диаграммой.</p></div>
+   <div class="card"><h3>Счёт и прайс-лист</h3><p>Готовый к печати счёт и прайс-лист для клиентов на основе ваших цифр.</p></div>
+   <div class="card"><h3>13 скриптов сообщений</h3><p>Ответы на заявки, коммерческие предложения, напоминания, запросы отзывов, рекомендации, повторные записи, жалобы.</p></div>
+   <div class="card"><h3>Руководство, чек-листы, маркетинг</h3><p>Стартовое руководство, чек-листы для работ, шаблон условий услуг и 30 дней идей для контента в соцсетях.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <img class="mock" style="max-width:720px;display:block;margin:0 auto" src="../img/mockup-bundle.svg" alt="Состав полного комплекта: таблица, руководство, скрипты, чек-листы и маркетинговый пакет">
+ </div>
+</section>
+
+<section class="soft" id="pricing">
+ <div class="wrap">
+  <h2>Выберите пакет</h2>
+  <p class="lead">Разовый платёж. Цены в USD; местные налоги могут быть добавлены при оформлении заказа.</p>
+  <p class="lead"><strong>Примечание: сами файлы написаны на английском языке.</strong></p>
+  <div class="prices">
+   <div class="tier"><h3>Starter</h3><div class="price">$9</div>
+    <ul><li>Калькулятор цен и прибыли</li><li>Прайс-лист для клиентов</li><li>Шаблон счёта</li><li>Чек-листы для работ</li><li>Шаблон условий услуг</li></ul>
+    <a class="btn" href="#" data-tier="starter">Купить Starter</a></div>
+   <div class="tier"><h3>Professional</h3><div class="price">$19</div>
+    <ul><li>Полная рабочая книга Business OS (11 вкладок)</li><li>CRM, автомобили, записи</li><li>Доходы, расходы, панель управления</li><li>13 готовых шаблонов сообщений для клиентов</li><li>Чек-листы &amp; условия</li></ul>
+    <a class="btn" href="#" data-tier="professional">Купить Professional</a></div>
+   <div class="tier"><h3>Business</h3><div class="price">$29</div>
+    <ul><li>Всё из Professional</li><li>Стартовое руководство по бизнесу: ценообразование, оборудование, первые 10 клиентов, регулярные тарифы</li></ul>
+    <a class="btn" href="#" data-tier="business">Купить Business</a></div>
+   <div class="tier best"><h3>Complete Bundle</h3><div class="price">$39</div>
+    <ul><li>Всё из перечисленного выше</li><li>Пакет для маркетинга и соцсетей</li><li>Чек-лист для Google Business Profile</li><li>Шаблоны листовок и партнёрских предложений</li><li>Бесплатные будущие обновления</li></ul>
+    <a class="btn" href="#" data-tier="bundle">Купить комплект</a></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>FAQ</h2>
+  <details><summary>Что нужно для работы?</summary><p>Microsoft Excel 2019 или новее / Microsoft 365, либо бесплатный аккаунт Google для Google Sheets. Документы Word открываются в Word, Google Docs или LibreOffice.</p></details>
+  <details><summary>Как получить файлы?</summary><p>Сразу после оплаты ссылка для скачивания появится на экране и придёт вам на email.</p></details>
+  <details><summary>Это подписка?</summary><p>Нет. Вы платите один раз, и файлы остаются у вас навсегда.</p></details>
+  <details><summary>Работает ли это за пределами США?</summary><p>Да. Вы сами указываете символ валюты и ставку налога/НДС. Расстояния можно вести в километрах или милях.</p></details>
+  <details><summary>Можно ли всё настроить под себя?</summary><p>Да. Переименовывайте услуги, меняйте цены, добавляйте свой логотип. Таблицы не заблокированы.</p></details>
+  <details><summary>Это налоговая или юридическая консультация?</summary><p>Нет. Инструменты помогают упорядочить ваши цифры. Пожалуйста, уточните налоговые и юридические требования в вашей стране у специалиста.</p></details>
+  <details><summary>Что делать, если возникли проблемы с файлами?</summary><p>Напишите нам в <a href="https://wa.me/66650576517?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9C%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%20%D1%81%20DetailOS." target="_blank" rel="noopener">WhatsApp</a> или на hello.loopwise+detailos@outlook.com, и мы поможем всё наладить. Если файл неисправен и мы не сможем его исправить, вы получите деньги обратно.</p></details>
+ </div>
+</section>
+
+<section class="soft" id="support">
+ <div class="wrap">
+  <h2>Поддержка</h2>
+  <p class="lead">Вопросы о покупке, загрузке или использовании файлов? Напишите нам на вашем языке. Ответ придёт по email, обычно в течение нескольких часов.</p>
+  <form id="sf" style="display:grid;gap:12px;max-width:560px;margin-top:18px">
+   <input name="email" type="email" required placeholder="Ваш email (используется для заказа)" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <input name="subject" required placeholder="Тема" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <textarea name="message" rows="4" required placeholder="Чем мы можем помочь?" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px"></textarea>
+   <button class="btn" type="submit">Отправить сообщение</button>
+   <div id="sok" style="display:none;background:#e5f6fb;padding:12px;border-radius:10px"></div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  © <span id="y"></span> DetailOS · <a href="https://wa.me/66650576517" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:hello.loopwise+detailos@outlook.com">hello.loopwise+detailos@outlook.com</a> · <a href="../imprint.html">Выходные данные</a> · <a href="../privacy.html">Конфиденциальность</a> · <a href="../terms.html">Условия &amp; возврат средств</a>
+ </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();
+// TODO: replace href="#" on [data-tier] buttons with Payhip product links once the store exists.</script>
+<script>
+const S_OK="Спасибо! Мы получили ваше сообщение и ответим по электронной почте.";
+const S_ERR="Извините, не удалось отправить сообщение. Пожалуйста, напишите нам на hello.loopwise+detailos@outlook.com.";
+document.getElementById('sf').addEventListener('submit',async e=>{
+ e.preventDefault();const b=e.target.querySelector('button'),o=document.getElementById('sok');b.disabled=true;
+ const d=Object.fromEntries(new FormData(e.target));d.site='shop';d.lang=document.documentElement.lang;
+ try{const r=await fetch('https://xsvenn.app.n8n.cloud/webhook/loopwise-support',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});if(!r.ok)throw 0;o.textContent=S_OK;e.target.reset();}
+ catch(err){b.disabled=false;o.textContent=S_ERR;}
+ o.style.display='block';
+});
+</script>
+</body>
+</html>

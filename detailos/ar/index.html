@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نظام إدارة أعمال تنظيف السيارات المتنقل – أدِر عملك من جدول بيانات واحد</title>
+<meta name="description" content="حاسبة الأسعار، وإدارة علاقات العملاء، وتقويم الحجوزات، ومتتبع الدخل والمصروفات، والفواتير، والنصوص الجاهزة وقوائم المراجعة لمحترفي تنظيف السيارات المتنقلين. يعمل على Excel &amp; Google Sheets. تحميل فوري.">
+<style>
+:root{--navy:#0f1e33;--accent:#1fa3c7;--accent2:#14839f;--bg:#ffffff;--soft:#f3f8fb;--text:#1b2633;--muted:#5a6b7d;--line:#dde6ee}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.55}
+a{color:var(--accent2)}.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{background:var(--navy);color:#fff}nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-weight:800;letter-spacing:.3px}.logo span{color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0 64px}
+h1{font-size:clamp(28px,4.5vw,46px);line-height:1.12;margin:0 0 16px}.hero p{color:#c9d6e3;font-size:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:10px;border:0;cursor:pointer}
+.btn:hover{background:var(--accent2)}.btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+.hero .note{font-size:14px;color:#9fb3c8;margin-top:12px}
+.mock{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
+section{padding:64px 0}section.soft{background:var(--soft)}h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}.lead{color:var(--muted);max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted)}
+.pain li{margin:8px 0}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.tier{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.tier.best{border:2px solid var(--accent);position:relative}.tier.best:before{content:"Best value";position:absolute;top:-12px;left:20px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px}
+.price{font-size:36px;font-weight:800;margin:6px 0}.tier ul{padding-left:18px;color:var(--muted);flex:1;font-size:15px}.tier .btn{text-align:center}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}summary{font-weight:700;cursor:pointer}
+footer{background:var(--navy);color:#9fb3c8;padding:28px 0;font-size:14px}footer a{color:#c9d6e3}
+@media (max-width:860px){.hero,.grid{grid-template-columns:1fr}.prices{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.prices{grid-template-columns:1fr}}
+.langs{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}.langs a{color:inherit;opacity:.7;text-decoration:none;padding:2px 6px;border-radius:6px}.langs a[aria-current]{opacity:1;font-weight:700;outline:1px solid currentColor}@media (max-width:600px){nav{flex-wrap:wrap;row-gap:10px}.langs{order:3;width:100%}}
+</style>
+<link rel="alternate" hreflang="en" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+<link rel="alternate" hreflang="es" href="https://xsvenn.github.io/loopwise-sites/detailos/es/">
+<link rel="alternate" hreflang="fr" href="https://xsvenn.github.io/loopwise-sites/detailos/fr/">
+<link rel="alternate" hreflang="pt" href="https://xsvenn.github.io/loopwise-sites/detailos/pt/">
+<link rel="alternate" hreflang="th" href="https://xsvenn.github.io/loopwise-sites/detailos/th/">
+<link rel="alternate" hreflang="ru" href="https://xsvenn.github.io/loopwise-sites/detailos/ru/">
+<link rel="alternate" hreflang="uk" href="https://xsvenn.github.io/loopwise-sites/detailos/uk/">
+<link rel="alternate" hreflang="ar" href="https://xsvenn.github.io/loopwise-sites/detailos/ar/">
+<link rel="alternate" hreflang="zh" href="https://xsvenn.github.io/loopwise-sites/detailos/zh/">
+<link rel="alternate" hreflang="hi" href="https://xsvenn.github.io/loopwise-sites/detailos/hi/">
+<link rel="alternate" hreflang="x-default" href="https://xsvenn.github.io/loopwise-sites/detailos/">
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav><div class="logo">Detail<span>OS</span></div><div class="langs"><a href="../" hreflang="en" lang="en">EN</a><a href="../es/" hreflang="es" lang="es">ES</a><a href="../fr/" hreflang="fr" lang="fr">FR</a><a href="../pt/" hreflang="pt" lang="pt">PT</a><a href="../th/" hreflang="th" lang="th">ไทย</a><a href="../ru/" hreflang="ru" lang="ru">RU</a><a href="../uk/" hreflang="uk" lang="uk">UA</a><a href="../ar/" hreflang="ar" lang="ar" aria-current="page">عربي</a><a href="../zh/" hreflang="zh" lang="zh">中文</a><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></div><a class="btn ghost" href="#pricing">احصل عليه الآن</a></nav>
+  <div class="hero">
+   <div>
+    <h1>أدِر عمل تنظيف السيارات المتنقل من جدول بيانات واحد.</h1>
+    <p>سعّر كل خدمة بما يضمن الربح، واحفظ بيانات كل عميل وكل سيارة، واملأ تقويمك بحجوزات متكررة، واطّلع على أرباحك الحقيقية كل شهر دون دفع أي اشتراكات برمجية.</p>
+    <a class="btn" href="#pricing">تصفح الباقات</a>
+    <div class="note">Excel &amp; Google Sheets · تحميل فوري · دفعة واحدة بلا اشتراك</div>
+   </div>
+   <img class="mock" src="../img/mockup-dashboard.svg" alt="معاينة للوحة تحكم نظام الأعمال تعرض الدخل الشهري والمصروفات والأرباح">
+  </div>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <h2>يبدو مألوفاً؟</h2>
+  <ul class="pain lead">
+   <li>أنت مشغول كل عطلة نهاية أسبوع، لكنك في نهاية الشهر لست متأكداً مما كسبته فعلاً.</li>
+   <li>التسعير يعتمد على التخمين. السيارات الكبيرة والمقاعد المغطاة بشعر الكلاب تستنزف وقتك مقابل الأجر نفسه.</li>
+   <li>بيانات العملاء موزعة بين هاتفك ورسائل إنستغرام وملاحظاتك، وتنسى إعادة حجزهم.</li>
+   <li>الفواتير وعروض الأسعار والردود تستنزف أمسياتك.</li>
+  </ul>
+ </div>
+</section>
+
+<section class="soft">
+ <div class="wrap">
+  <h2>كل ما يحتاجه متنقل تنظيف السيارات</h2>
+  <p class="lead">مصنف واحد متكامل: ما تدخله مرة واحدة ينتقل تلقائياً إلى الأسعار والفواتير وسجل العملاء ولوحة التحكم.</p>
+  <div class="grid">
+   <div class="card"><h3>حاسبة السعر والربح</h3><p>أدخل ساعات العمل والمنتجات وتكاليف التنقل. واحصل على سعر مقترح بهامش الربح الذي تستهدفه، مع معرفة ربحك لكل ساعة.</p></div>
+   <div class="card"><h3>نظام إدارة علاقات العملاء</h3><p>جهة الاتصال والمصدر والموافقة والزيارات وإجمالي الإنفاق، مع تاريخ "موعد إعادة الحجز" تلقائي.</p></div>
+   <div class="card"><h3>سجلات المركبات</h3><p>الماركة وفئة الحجم وحالة الطلاء وتواريخ تطبيق طلاء السيراميك والملاحظات لكل سيارة.</p></div>
+   <div class="card"><h3>تقويم الحجوزات</h3><p>المواعيد والعربون والحالة والتذكيرات في قائمة واحدة.</p></div>
+   <div class="card"><h3>الدخل والمصروفات</h3><p>سجل الأعمال مع احتساب الضريبة، والمصروفات مصنفة، ومتتبع للفواتير غير المسددة.</p></div>
+   <div class="card"><h3>لوحة التحكم الشهرية</h3><p>الدخل والتكاليف والأرباح وعدد الأعمال ومتوسط قيمة الفاتورة والربح لكل ساعة، مع رسم بياني.</p></div>
+   <div class="card"><h3>الفاتورة وقائمة الأسعار</h3><p>فاتورة جاهزة للطباعة وقائمة أسعار للعملاء مبنية على أرقامك الخاصة.</p></div>
+   <div class="card"><h3>13 نصاً جاهزاً للرسائل</h3><p>ردود الاستفسارات، وعروض الأسعار، والتذكيرات، وطلبات التقييم، والإحالات، وإعادة الحجز، والشكاوى.</p></div>
+   <div class="card"><h3>الدليل وقوائم المراجعة والتسويق</h3><p>دليل للمبتدئين، وقوائم مراجعة للأعمال، ونموذج شروط الخدمة، و30 يوماً من أفكار المحتوى لوسائل التواصل الاجتماعي.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <img class="mock" style="max-width:720px;display:block;margin:0 auto" src="../img/mockup-bundle.svg" alt="محتويات الحزمة الكاملة: المصنف والدليل والنصوص وقوائم المراجعة وحزمة التسويق">
+ </div>
+</section>
+
+<section class="soft" id="pricing">
+ <div class="wrap">
+  <h2>اختر باقتك</h2>
+  <p class="lead">دفعة واحدة. الأسعار بالدولار الأمريكي، وقد تُضاف الضرائب المحلية عند الدفع.</p>
+  <p class="lead"><strong>ملاحظة: الملفات نفسها باللغة الإنجليزية.</strong></p>
+  <div class="prices">
+   <div class="tier"><h3>Starter</h3><div class="price">$9</div>
+    <ul><li>حاسبة السعر والربح</li><li>قائمة أسعار العملاء</li><li>نموذج الفاتورة</li><li>قوائم مراجعة الأعمال</li><li>نموذج شروط الخدمة</li></ul>
+    <a class="btn" href="#" data-tier="starter">اشترِ الباقة الأساسية</a></div>
+   <div class="tier"><h3>Professional</h3><div class="price">$19</div>
+    <ul><li>كتيّب Business OS الكامل (11 ورقة عمل)</li><li>إدارة العملاء والمركبات والحجوزات</li><li>الدخل والمصروفات ولوحة المتابعة</li><li>13 نصاً جاهزاً لرسائل العملاء</li><li>قوائم المراجعة &amp; الشروط</li></ul>
+    <a class="btn" href="#" data-tier="professional">اشترِ الباقة الاحترافية</a></div>
+   <div class="tier"><h3>Business</h3><div class="price">$29</div>
+    <ul><li>كل ما في الباقة الاحترافية</li><li>دليل انطلاقة الأعمال: التسعير والمعدات وأول 10 عملاء وخطط التكرار</li></ul>
+    <a class="btn" href="#" data-tier="business">اشترِ باقة الأعمال</a></div>
+   <div class="tier best"><h3>Complete Bundle</h3><div class="price">$39</div>
+    <ul><li>كل ما سبق</li><li>حزمة التسويق ووسائل التواصل الاجتماعي</li><li>قائمة مراجعة Google Business Profile</li><li>قوالب المنشورات الإعلانية والشراكات</li><li>تحديثات مستقبلية مجانية</li></ul>
+    <a class="btn" href="#" data-tier="bundle">اشترِ الحزمة الكاملة</a></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>FAQ</h2>
+  <details><summary>ما الذي أحتاجه لاستخدامه؟</summary><p>برنامج Microsoft Excel 2019 أو أحدث / Microsoft 365، أو حساب Google مجاني لاستخدام Google Sheets. تُفتح مستندات Word في Word أو Google Docs أو LibreOffice.</p></details>
+  <details><summary>كيف أحصل على الملفات؟</summary><p>فور إتمام الدفع، ستحصل على رابط التحميل على الشاشة وعبر البريد الإلكتروني.</p></details>
+  <details><summary>هل هو اشتراك؟</summary><p>لا. تدفع مرة واحدة وتحتفظ بالملفات إلى الأبد.</p></details>
+  <details><summary>هل يعمل خارج الولايات المتحدة؟</summary><p>نعم. يمكنك تحديد رمز عملتك ونسبة الضريبة أو ضريبة القيمة المضافة الخاصة ببلدك. تعمل المسافات بالكيلومترات أو الأميال.</p></details>
+  <details><summary>هل يمكنني تخصيصه؟</summary><p>نعم. أعد تسمية الخدمات، وغيّر الأسعار، وأضف شعارك. الجداول غير مقفلة.</p></details>
+  <details><summary>هل هذه نصيحة ضريبية أو قانونية؟</summary><p>لا. هذه الأدوات تساعدك على تنظيم أرقامك. يرجى مراجعة متطلبات الضرائب والقوانين في بلدك مع مختص.</p></details>
+  <details><summary>ماذا لو واجهت مشكلة في الملفات؟</summary><p>راسلنا عبر <a href="https://wa.me/66650576517?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D9%85%D8%B3%D8%A7%D8%B9%D8%AF%D8%A9%20%D9%81%D9%8A%20DetailOS." target="_blank" rel="noopener">WhatsApp</a> أو راسلنا عبر البريد الإلكتروني hello.loopwise+detailos@outlook.com وسنساعدك على تشغيله. وإذا كان أي ملف معيباً ولم نتمكن من إصلاحه، نعيد لك أموالك.</p></details>
+ </div>
+</section>
+
+<section class="soft" id="support">
+ <div class="wrap">
+  <h2>الدعم</h2>
+  <p class="lead">لديك أسئلة حول عملية شراء أو تحميل أو استخدام الملفات؟ راسلنا بلغتك. ستصلك إجابة عبر البريد الإلكتروني، عادةً خلال بضع ساعات.</p>
+  <form id="sf" style="display:grid;gap:12px;max-width:560px;margin-top:18px">
+   <input name="email" type="email" required placeholder="بريدك الإلكتروني (المستخدم في الطلب)" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <input name="subject" required placeholder="الموضوع" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px">
+   <textarea name="message" rows="4" required placeholder="كيف يمكننا مساعدتك؟" style="font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px"></textarea>
+   <button class="btn" type="submit">إرسال الرسالة</button>
+   <div id="sok" style="display:none;background:#e5f6fb;padding:12px;border-radius:10px"></div>
+  </form>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  © <span id="y"></span> DetailOS · <a href="https://wa.me/66650576517" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:hello.loopwise+detailos@outlook.com">hello.loopwise+detailos@outlook.com</a> · <a href="../imprint.html">إشعار قانوني</a> · <a href="../privacy.html">الخصوصية</a> · <a href="../terms.html">الشروط &amp; الاسترداد</a>
+ </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();
+// TODO: replace href="#" on [data-tier] buttons with Payhip product links once the store exists.</script>
+<script>
+const S_OK="شكرًا لك! لقد استلمنا رسالتك وسنرد عليك عبر البريد الإلكتروني.";
+const S_ERR="عذرًا، لم تكتمل العملية. يرجى مراسلتنا على البريد الإلكتروني hello.loopwise+detailos@outlook.com.";
+document.getElementById('sf').addEventListener('submit',async e=>{
+ e.preventDefault();const b=e.target.querySelector('button'),o=document.getElementById('sok');b.disabled=true;
+ const d=Object.fromEntries(new FormData(e.target));d.site='shop';d.lang=document.documentElement.lang;
+ try{const r=await fetch('https://xsvenn.app.n8n.cloud/webhook/loopwise-support',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});if(!r.ok)throw 0;o.textContent=S_OK;e.target.reset();}
+ catch(err){b.disabled=false;o.textContent=S_ERR;}
+ o.style.display='block';
+});
+</script>
+</body>
+</html>

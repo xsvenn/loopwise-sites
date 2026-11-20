@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loopwise – Автоматизація, яка перетворює запити на заплановані замовлення</title>
+<meta name="description" content="Збір заявок, миттєві відповіді, бронювання, нагадування, запити на відгуки та ШІ-асистенти для детейлерів і локальних сервісних бізнесів. Фіксовані ціни, запуск за кілька днів.">
+<style>
+:root{--ink:#14161f;--violet:#5b4bff;--violet2:#4335e0;--mint:#14b88a;--soft:#f5f4ff;--muted:#5d6275;--line:#e3e2f0}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);line-height:1.55;background:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}a{color:var(--violet2)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}.logo{font-weight:800;font-size:20px}.logo b{color:var(--violet)}
+.btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:10px;border:0;cursor:pointer;font-size:16px}.btn:hover{background:var(--violet2)}
+.btn.line{background:#fff;color:var(--violet);border:2px solid var(--violet)}
+.hero{padding:40px 0 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+h1{font-size:clamp(28px,4.6vw,48px);line-height:1.1;margin:0 0 16px}.hero p{font-size:18px;color:var(--muted)}
+.flow{background:var(--soft);border-radius:18px;padding:22px}.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;display:flex;gap:10px;align-items:center;font-size:15px}
+.step i{font-style:normal;background:var(--violet);color:#fff;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:13px;flex:none}
+section{padding:64px 0}.soft{background:var(--soft)}h2{font-size:clamp(24px,3.4vw,34px);margin:0 0 10px}.lead{color:var(--muted);max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}.card h3{margin:0 0 6px;font-size:18px}.card p{margin:0;color:var(--muted)}
+.tier{display:flex;flex-direction:column}.tier .price{font-size:30px;font-weight:800;margin:6px 0 2px}.tier small{color:var(--muted)}.tier ul{padding-left:18px;color:var(--muted);flex:1}
+.contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.btn.wa{background:#1fa855}.btn.wa:hover{background:#178a45}
+.tier.pop{border:2px solid var(--violet)}
+form{display:grid;gap:12px;max-width:560px;margin-top:22px}input,select,textarea{font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;width:100%}
+label{font-weight:600;font-size:14px}.ok{display:none;background:#e5f8f1;color:#0c6b50;padding:14px;border-radius:10px}
+footer{background:var(--ink);color:#a9adbf;padding:28px 0;font-size:14px}footer a{color:#d6d8e4}
+@media (max-width:860px){.hero,.grid{grid-template-columns:1fr}}
+.langs{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}.langs a{color:inherit;opacity:.7;text-decoration:none;padding:2px 6px;border-radius:6px}.langs a[aria-current]{opacity:1;font-weight:700;outline:1px solid currentColor}@media (max-width:600px){nav{flex-wrap:wrap;row-gap:10px}.langs{order:3;width:100%}}
+</style>
+<link rel="alternate" hreflang="en" href="https://xsvenn.github.io/loopwise-sites/">
+<link rel="alternate" hreflang="es" href="https://xsvenn.github.io/loopwise-sites/es/">
+<link rel="alternate" hreflang="fr" href="https://xsvenn.github.io/loopwise-sites/fr/">
+<link rel="alternate" hreflang="pt" href="https://xsvenn.github.io/loopwise-sites/pt/">
+<link rel="alternate" hreflang="th" href="https://xsvenn.github.io/loopwise-sites/th/">
+<link rel="alternate" hreflang="ru" href="https://xsvenn.github.io/loopwise-sites/ru/">
+<link rel="alternate" hreflang="uk" href="https://xsvenn.github.io/loopwise-sites/uk/">
+<link rel="alternate" hreflang="ar" href="https://xsvenn.github.io/loopwise-sites/ar/">
+<link rel="alternate" hreflang="zh" href="https://xsvenn.github.io/loopwise-sites/zh/">
+<link rel="alternate" hreflang="hi" href="https://xsvenn.github.io/loopwise-sites/hi/">
+<link rel="alternate" hreflang="x-default" href="https://xsvenn.github.io/loopwise-sites/">
+</head>
+<body>
+<div class="wrap"><nav><div class="logo">Loop<b>wise</b></div><div class="langs"><a href="../" hreflang="en" lang="en">EN</a><a href="../es/" hreflang="es" lang="es">ES</a><a href="../fr/" hreflang="fr" lang="fr">FR</a><a href="../pt/" hreflang="pt" lang="pt">PT</a><a href="../th/" hreflang="th" lang="th">ไทย</a><a href="../ru/" hreflang="ru" lang="ru">RU</a><a href="../uk/" hreflang="uk" lang="uk" aria-current="page">UA</a><a href="../ar/" hreflang="ar" lang="ar">عربي</a><a href="../zh/" hreflang="zh" lang="zh">中文</a><a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a></div><a class="btn line" href="#audit">Безкоштовна перевірка</a></nav></div>
+
+<div class="wrap hero">
+ <div>
+  <h1>Перестаньте втрачати замовлення через повільні відповіді.</h1>
+  <p>Ми створюємо автоматизації для детейлерів і локальних сервісних бізнесів. Кожен запит отримує миттєву відповідь, бронюється й супроводжується нагадуваннями, а потім перетворюється на відгук і постійного клієнта, поки ви працюєте.</p>
+  <a class="btn" href="#audit">Отримайте безкоштовну перевірку автоматизації</a>
+ </div>
+ <div class="flow" aria-label="Приклад автоматизації">
+  <div class="step"><i>1</i>Клієнт заповнює вашу форму або пише вам о 21:00</div>
+  <div class="step"><i>2</i>Миттєва відповідь із цінами та вільними часовими слотами</div>
+  <div class="step"><i>3</i>Лід збережено у вашій CRM і оцінено як гарячий, теплий або холодний</div>
+  <div class="step"><i>4</i>Бронювання підтверджено, нагадування надіслано за день до візиту</div>
+  <div class="step"><i>5</i>Запит на відгук після роботи, пропозиція повторного запису через 8 тижнів</div>
+ </div>
+</div>
+
+<section class="soft"><div class="wrap">
+ <h2>Що ми створюємо</h2>
+ <p class="lead">Невеликі, сфокусовані системи з однією чіткою функцією кожна. Побудовані на перевірених інструментах, задокументовані та передані вам.</p>
+ <div class="grid">
+  <div class="card"><h3>Збір заявок</h3><p>Лендинг або форма на сайті, яка збирає саме те, що потрібно для розрахунку вартості.</p></div>
+  <div class="card"><h3>Миттєві відповіді</h3><p>Відповідь, що звучить особисто, протягом хвилини, вдень чи вночі.</p></div>
+  <div class="card"><h3>Проста CRM</h3><p>Усі ліди й клієнти в одному місці зі статусом, вартістю та наступним кроком.</p></div>
+  <div class="card"><h3>Бронювання та нагадування</h3><p>Онлайн-бронювання, підключене до вашого календаря, плюс автоматичні нагадування.</p></div>
+  <div class="card"><h3>Відгуки та повторні записи</h3><p>Запити на відгуки у правильний момент і пропозиції повторного запису, які повертають клієнтів.</p></div>
+  <div class="card"><h3>ШІ-асистент</h3><p>Відповідає на типові запитання за вашим прайсом і FAQ та передає вам усе незрозуміле.</p></div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <h2>Пакети</h2>
+ <p class="lead">Чіткі стартові ціни. Точна кошторисна пропозиція надається після безкоштовної перевірки. Оплата сторонніх інструментів (якщо є) сплачується безпосередньо постачальнику.</p>
+ <div class="grid">
+  <div class="card tier"><h3>Lead Catcher</h3><div class="price">від $490</div><small>налаштування · далі від $99/місяць</small>
+   <ul><li>Лендинг із формою заявки</li><li>Миттєва автовідповідь</li><li>CRM для лідів</li><li>Двоетапне подальше спілкування</li></ul><a class="btn line" href="#audit">Почніть тут</a></div>
+  <div class="card tier pop"><h3>Booking Machine</h3><div class="price">від $890</div><small>налаштування · далі від $149/місяць</small>
+   <ul><li>Усе з пакету Lead Catcher</li><li>Онлайн-бронювання + календар</li><li>Нагадування &amp; зменшення кількості неявок</li><li>Запити на відгуки &amp; повторне бронювання</li></ul><a class="btn" href="#audit">Найпопулярніше</a></div>
+  <div class="card tier"><h3>AI Front Desk</h3><div class="price">від $1,490</div><small>налаштування · далі від $249/місяць</small>
+   <ul><li>Усе з Booking Machine</li><li>ШІ-асистент для чату на сайті</li><li>Оцінка лідів &amp; передача вам</li><li>Щомісячний звіт</li></ul><a class="btn line" href="#audit">Зв'яжіться з нами</a></div>
+ </div>
+ <p class="lead" style="margin-top:18px">Щомісячна плата покриває хостинг, моніторинг, виправлення та до 1 години дрібних змін на місяць. Звертайтеся в будь-який час через WhatsApp або електронну пошту. Скасувати підписку можна щомісяця, а створене нами залишається у вас.</p>
+</div></section>
+
+<section class="soft" id="audit"><div class="wrap">
+ <h2>Безкоштовна перевірка автоматизації через чат або електронну пошту</h2>
+ <p class="lead">Розкажіть, як до вас зараз надходять запити. Ми покажемо, де губляться потенційні клієнти, і що автоматизуємо першим. Дзвінок не потрібен, без жодних зобов'язань. Відповідаємо протягом кількох годин (за часом Таїланду, GMT+7).</p>
+ <div class="contact">
+  <a class="btn wa" href="https://wa.me/66650576517?text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%2C%20Loopwise%21%20%D0%AF%20%D1%85%D0%BE%D1%82%D1%96%D0%B2%20%D0%B1%D0%B8%20%D0%BE%D1%82%D1%80%D0%B8%D0%BC%D0%B0%D1%82%D0%B8%20%D0%B1%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D1%83%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D0%BA%D1%83%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D1%96%D1%97%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%BE%D0%B3%D0%BE%20%D0%B1%D1%96%D0%B7%D0%BD%D0%B5%D1%81%D1%83." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn line" href="mailto:hello.loopwise@outlook.com?subject=%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D0%BA%D0%B0%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D1%96%D1%97">Електронна пошта</a>
+ </div>
+ <p class="lead" style="margin-top:22px">Або скористайтеся формою, і ми відповімо вам електронною поштою:</p>
+ <form id="f">
+  <div><label for="n">Ім'я</label><input id="n" name="name" required></div>
+  <div><label for="e">Електронна пошта</label><input id="e" name="email" type="email" required></div>
+  <div><label for="b">Бізнес &amp; сайт</label><input id="b" name="business" required></div>
+  <div><label for="t">Тип бізнесу</label><select id="t" name="type"><option value="Car detailing">Детейлінг авто</option><option value="Cleaning">Прибирання</option><option value="Trades / home services">Ремесла та побутові послуги</option><option value="Beauty / wellness">Краса / велнес</option><option value="Other">Інше</option></select></div>
+  <div><label for="v">Запитів на тиждень (приблизно)</label><select id="v" name="volume"><option value="Under 5">Менше 5</option><option value="5–20">5–20</option><option value="20–50">20–50</option><option value="50+">50+</option></select></div>
+  <div><label for="m">Найбільша проблема зараз</label><textarea id="m" name="message" rows="3"></textarea></div>
+  <label style="font-weight:400"><input type="checkbox" required style="width:auto"> Я погоджуюсь, що мої дані використовуються для відповіді на мій запит (див. <a href="../privacy.html">Конфіденційність</a>).</label>
+  <button class="btn" type="submit">Замовити безкоштовну перевірку</button>
+  <div class="ok" id="ok">Дякуємо! Незабаром ви отримаєте відповідь електронною поштою.</div>
+ </form>
+</div></section>
+
+<footer><div class="wrap">© <span id="y"></span> Loopwise · <a href="mailto:hello.loopwise@outlook.com">hello.loopwise@outlook.com</a> · <a href="../imprint.html">Вихідні дані</a> · <a href="../privacy.html">Конфіденційність</a></div></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+// Set to the n8n production webhook URL once the lead workflow is live.
+const T_OK="Дякуємо! Незабаром ви отримаєте відповідь електронною поштою.";
+const T_ERR="Вибачте, не вдалося надіслати повідомлення. Спробуйте ще раз або напишіть на hello.loopwise@outlook.com.";
+const LEAD_WEBHOOK='https://xsvenn.app.n8n.cloud/webhook/loopwise-lead';
+document.getElementById('f').addEventListener('submit',async e=>{
+ e.preventDefault();const btn=e.target.querySelector('button'),ok=document.getElementById('ok');
+ const data=Object.fromEntries(new FormData(e.target));data.source='agency-website';data.lang=document.documentElement.lang;btn.disabled=true;
+ try{const r=await fetch(LEAD_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok)throw 0;
+  ok.textContent=T_OK;}
+ catch(err){btn.disabled=false;ok.textContent=T_ERR;}
+ ok.style.display='block';
+});
+</script>
+</body>
+</html>
